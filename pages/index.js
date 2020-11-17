@@ -34,7 +34,7 @@ function Home() {
         <meta name='author' content='mongker' />
         <meta property='og:url' content='https://developers.zalo.me/' />
         <meta property='og:title' content='Zalo For Developers' />
-        <meta property='og:image' content='https://developers.zalo.me/web/static/prodution/zalo.png' />
+        <meta property='og:image' content='https://image.anninhthudo.vn/w600/Uploaded/2020/206/2020_03_19/zalo-4.png' />
         <meta property='og:description' content='Trang thông tin về Zalo dành cho cộng đồng lập trình viên' />
       </Head>
       <Layout className='layout'>
