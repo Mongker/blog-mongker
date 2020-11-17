@@ -29,6 +29,11 @@ function Home() {
       <Head>
         <title>Log Bug</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Mong đẹp trai nhất làng' />
+        <meta />
+        <meta property='og:image' content='https://i.ytimg.com/vi/XVN4FTLImC0/maxresdefault.jpg' />
+        <meta property='og:title' content='Test Noi Dung' />
+        <meta property='og:description' content='tes noi dung xem co ra gi khong' />
       </Head>
       <Layout className='layout'>
         <Header>
