@@ -1,65 +1,53 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+/**
+ * Copyright 2020 present, Lê Văn Mong.
+ * All rights reserved.
+ * @author Mongker 16/11/2020
+ * @email: levanmong.dola.99@gmail.com
+ * @student-code: 68DCHT20091
+ * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ */
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import Head from 'next/head';
+import Link from "next/link";
+import {Layout, Menu, Breadcrumb} from 'antd';
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+// styles
+import 'antd/dist/antd.css';
+import '../styles/index.module.css';
+// import styles from '../styles/Home.module.css';
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+// const
+const {Header, Content, Footer} = Layout;
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+function Home() {
+    return (
+        <div>
+            <Head>
+                <title>Log Bug</title>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            <Layout className="layout">
+                <Header>
+                    <div className="logo" />
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                        <Menu.Item key="1">New Bug</Menu.Item>
+                        <Menu.Item key="2">Chủ đề</Menu.Item>
+                        <Menu.Item key="3">Bảng tin</Menu.Item>
+                        <Menu.Item key="4">Review</Menu.Item>
+                        <Menu.Item key="5">Ảnh chế</Menu.Item>
+                        <Menu.Item key="6">Rút gọn link</Menu.Item>
+                    </Menu>
+                </Header>
+                <Content style={{ padding: '0 50px' }}>
+                    <div className="site-layout-content">
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                    </div>
+                </Content>
+                <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            </Layout>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    )
 }
+
+export default Home;
