@@ -29,14 +29,13 @@ function Home() {
       <Head>
         <title>Log Bug</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Mong đẹp trai nhất làng' />
-        <meta />
         <meta name='description' content='Cuộc sống em khỏe không' />
         <meta name='robots' content='index, follow' />
         <meta name='author' content='mongker' />
-        <meta property='og:image' content='https://i.ytimg.com/vi/XVN4FTLImC0/maxresdefault.jpg' />
-        <meta property='og:title' content='Test Noi Dung' />
-        <meta property='og:description' content='tes noi dung xem co ra gi khong' />
+        <meta property='og:url' content='https://developers.zalo.me/' />
+        <meta property='og:title' content='Zalo For Developers' />
+        <meta property='og:image' content='https://developers.zalo.me/web/static/prodution/zalo.png' />
+        <meta property='og:description' content='Trang thông tin về Zalo dành cho cộng đồng lập trình viên' />
       </Head>
       <Layout className='layout'>
         <Header>
