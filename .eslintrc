@@ -1,0 +1,301 @@
+/**
+ * "off" or 0 - turn the rule off
+ * "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
+ * "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+ */
+{
+    "parser": "babel-eslint",
+    "rules": {
+        "react/jsx-curly-brace-presence": 0,
+        "no-var": 2,
+        "prefer-const": 2,
+        "import/order": 0,
+        /**
+         * Variables
+         */
+        "no-shadow": 2,
+        "no-shadow-restricted-names": 2,
+        "no-undef": 2,
+        "no-unused-vars": 0,
+//        "no-unused-vars": [
+//            2,
+//            {
+//                "vars": "local",
+//                "args": "after-used"
+//            }
+//        ],
+        "no-use-before-define": 2,
+        /**
+         * Possible errors
+         */
+        "no-cond-assign": [
+            2,
+            "always"
+        ],
+        // CuongNT: mac dinh warn(1) khi deverlop, khi commit, build bat buoc ve error(2)
+        "no-console": 1,
+        // CuongNT: mac dinh warn(1) khi deverlop, khi commit, build bat buoc ve error(2)
+        "no-debugger": 1,
+        "no-alert": 2,
+        "no-constant-condition": 2,
+        "no-dupe-keys": 2,
+        "no-duplicate-case": 2,
+        "no-empty": 2,
+        "no-ex-assign": 2,
+        "no-extra-semi": 2,
+        "no-func-assign": 2,
+        "no-inner-declarations": 2,
+        "no-invalid-regexp": 2,
+        "no-irregular-whitespace": 2,
+        "no-obj-calls": 2,
+        "no-sparse-arrays": 2,
+        "no-unreachable": 2,
+        "use-isnan": 2,
+        "block-scoped-var": 2,
+        /**
+         * Best practices
+         */
+        "consistent-return": 2,
+        "curly": [
+            2,
+            "multi-line"
+        ],
+        "default-case": 2,
+        "dot-notation": [
+            2,
+            {
+                "allowKeywords": true
+            }
+        ],
+        "eqeqeq": 2,
+        "guard-for-in": 2,
+        "no-caller": 2,
+        "no-else-return": 2,
+        "no-eq-null": 2,
+        "no-eval": 2,
+        "no-extend-native": 2,
+        "no-extra-bind": 2,
+        "no-fallthrough": 2,
+        "no-floating-decimal": 2,
+        "no-implied-eval": 2,
+        "no-lone-blocks": 2,
+        "no-loop-func": 2,
+        "no-multi-str": 2,
+        "no-native-reassign": 2,
+        "no-new": 2,
+        "no-new-func": 2,
+        "no-new-wrappers": 2,
+        "no-octal": 2,
+        "no-octal-escape": 2,
+        "no-proto": 2,
+        "no-redeclare": 2,
+        "no-return-assign": 2,
+        "no-script-url": 2,
+        "no-self-compare": 2,
+        "no-sequences": 2,
+        "no-with": 2,
+        "radix": 2,
+        "vars-on-top": 2,
+        "yoda": 2,
+        /**
+         * Style
+         */
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "brace-style": [
+            2,
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "quotes": [
+            2,
+            "single",
+            "avoid-escape"
+        ],
+        "camelcase": [
+            2,
+            {
+                "properties": "never"
+            }
+        ],
+        "comma-spacing": [
+            2,
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "comma-style": [
+            2,
+            "last"
+        ],
+        "eol-last": 2,
+        "func-names": 2,
+        "key-spacing": [
+            2,
+            {
+                "beforeColon": false,
+                "afterColon": true
+            }
+        ],
+        "new-cap": [
+            0,
+            {
+                "newIsCap": true
+            }
+        ],
+        "no-multiple-empty-lines": [
+            2,
+            {
+                "max": 2
+            }
+        ],
+        "no-new-object": 2,
+        "no-spaced-func": 2,
+        "no-trailing-spaces": 2,
+        "no-extra-parens": [
+            2,
+            "functions"
+        ],
+        "one-var": [
+            2,
+            "never"
+        ],
+        "padded-blocks": [
+            2,
+            "never"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "semi-spacing": [
+            2,
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "space-before-blocks": 2,
+        "space-before-function-paren": [
+            2,
+            "never"
+        ],
+        "space-infix-ops": 2,
+        "spaced-comment": [
+            2,
+            "always",
+            {
+                "exceptions": [
+                    "-",
+                    "+"
+                ],
+                "markers": [
+                    "=",
+                    "!"
+                ]
+                // space here to support sprockets directives
+            }
+        ],
+        "no-multi-spaces": 2,
+        // React
+        "jsx-quotes": [
+            2,
+            "prefer-double"
+        ],
+        // "jsx-a11y/img-has-alt": 2,
+        "jsx-a11y/img-redundant-alt": 2,
+        "jsx-a11y/aria-props": 2,
+        // "jsx-a11y/href-no-hash": 2,
+        "jsx-a11y/label-has-for": 2,
+        "jsx-a11y/mouse-events-have-key-events": 2,
+        "jsx-a11y/role-has-required-aria-props": 2,
+        "jsx-a11y/role-supports-aria-props": 2,
+        // Todo by CuongNT: xem lại luật này sau
+        "jsx-a11y/anchor-is-valid": 0,
+
+        // react
+        "react/jsx-no-undef": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/no-did-mount-set-state": 2,
+        "react/no-did-update-set-state": 2,
+        "react/no-multi-comp": 2,
+        "react/no-unknown-property": 2,
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": 2,
+        "react/self-closing-comp": 2,
+        "react/jsx-closing-bracket-location": 2,
+        "react/jsx-pascal-case": 2,
+        "react/prefer-stateless-function": 2,
+        "react/prefer-es6-class": 2,
+        "react/jsx-curly-spacing": 2,
+        "react/no-string-refs": 2,
+        "react/jsx-wrap-multilines": ["error", {"declaration": false, "assignment": false}],
+        "react/jsx-no-bind": 2,
+        "react/require-render-return": 2,
+        // CuongNT: khong dung index lam key trong render component
+        "react/no-array-index-key": 2,
+        // CuongNT: airbnb mac dinh de jsx-indent la 2 => nen cau hinh lai la 4
+//        "react/jsx-indent": [2, 4],
+        "react/jsx-indent": 0,
+        // CuongNT: airbnb mac dinh de jsx-indent la 2 => nen cau hinh lai la 4
+        "react/jsx-indent-props": 0,
+
+        // boilerplate rules
+
+        "arrow-parens": [
+            "error",
+            "always"
+        ],
+        "arrow-body-style": [
+            2,
+            "as-needed"
+        ],
+        // CuongNT: Them 1 dau , o thuoc tinh cuoi object. VD: dung {a: 1, b: 2,}. Sai: {a: 1, b: 2}
+        "comma-dangle": [
+            2,
+            "always-multiline"
+        ],
+        "import/no-extraneous-dependencies": 0, // TODO: Chưa fix được luật này
+        // CuongNT: bat buoc dung `abc${variable}def` thay vi "abc" + variable + "def"
+        "prefer-template": 2,
+        "react/forbid-prop-types": 0, // TODO: Cần phải check PropTypes của các attr của object
+        "react/jsx-first-prop-new-line": [
+            2,
+            "multiline"
+        ],
+        "react/jsx-filename-extension": 0, // Đổi các file .js thành .jsx => tắt luật này đi
+        "react/require-default-props": 0, // TODO: Giao cho từng người phụ trách các comp của mình
+        "import/no-cycle": 0, // TODO: Giao cho từng người phụ trách các comp của mình
+
+        // TamDN - Hiện phiên bản eslint-config-airbnb không báo lỗi với single-child, literal nhưng bản này lại không build được
+        // Tạm thời để config này để có thể build
+        // Xem thêm tại: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
+        "react/jsx-one-expression-per-line": 1,
+
+        // TamDN - Cấu hình thứ tự các hàm, vì bản hiện tại có thể build thường báo lỗi không chuẩn
+        "react/sort-comp": [1, {
+            "order": [
+                "constructor",
+                "lifecycle",
+                "everything-else",
+                "render"
+            ]
+        }],
+
+        "react/no-unused-state": 0,
+
+        // redux-sagas
+        // "redux-sagas/no-unhandled-errors": 0,
+        // "redux-sagas/no-yield-in-race": 0,
+        // "redux-sagas/yield-effects": 0
+    }
+}

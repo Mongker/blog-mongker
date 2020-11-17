@@ -8,12 +8,19 @@
  */
 
 import React from 'react';
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 function Test() {
-    return(
-        <div>Mong</div>
-    );
+	return (
+		<div>
+			<Head>
+				<title>Log Bug</title>
+				<link rel='icon' href='/news.ico' />
+			</Head>
+			<div style={{ color: 'red' }}>Mong</div>
+		</div>
+	);
 }
 
 Test.propTypes = {};
