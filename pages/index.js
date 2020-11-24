@@ -24,35 +24,42 @@ import Test from './Test';
 const { Header, Content, Footer } = Layout;
 
 function Home() {
-	return (
-		<div>
-			<Head>
-				<title>Log Bug</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-			<Layout className='layout'>
-				<Header>
-					<div className='logo' />
-					<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
-						<Menu.Item key='1'>
-							<Link href='/Test'>New Bug</Link>
-						</Menu.Item>
-						<Menu.Item key='2'>Chủ đề</Menu.Item>
-						<Menu.Item key='3'>Bảng tin</Menu.Item>
-						<Menu.Item key='4'>Review</Menu.Item>
-						<Menu.Item key='5'>Ảnh chế</Menu.Item>
-						<Menu.Item key='6'>Rút gọn link</Menu.Item>
-					</Menu>
-				</Header>
-				<Content style={{ padding: '0 50px' }}>
-					<div className='site-layout-content'>
-						<Test />
-					</div>
-				</Content>
-				<Footer style={{ textAlign: 'center' }}>Mongker ©2018 Created by Ant UED</Footer>
-			</Layout>
-		</div>
-	);
+  return (
+    <div>
+      <Head>
+        <title>Log Bug</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Cuộc sống em khỏe không' />
+        <meta name='robots' content='index, follow' />
+        <meta name='author' content='mongker' />
+        <meta property='og:url' content='https://developers.zalo.me/' />
+        <meta property='og:title' content='Zalo For Developers' />
+        <meta property='og:image' content='https://image.anninhthudo.vn/w600/Uploaded/2020/206/2020_03_19/zalo-4.png' />
+        <meta property='og:description' content='Trang thông tin về Zalo dành cho cộng đồng lập trình viên' />
+      </Head>
+      <Layout className='layout'>
+        <Header>
+          <div className='logo' />
+          <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
+            <Menu.Item key='1'>
+              <Link href='/Test'>New Bug</Link>
+            </Menu.Item>
+            <Menu.Item key='2'>Chủ đề</Menu.Item>
+            <Menu.Item key='3'>Bảng tin</Menu.Item>
+            <Menu.Item key='4'>Review</Menu.Item>
+            <Menu.Item key='5'>Ảnh chế</Menu.Item>
+            <Menu.Item key='6'>Rút gọn link</Menu.Item>
+          </Menu>
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <div className='site-layout-content'>
+            <Test />
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Mongker ©2018 Created by Ant UED</Footer>
+      </Layout>
+    </div>
+  );
 }
 
 export default Home;
