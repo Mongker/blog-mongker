@@ -1,4 +1,4 @@
-import { actionTypes } from './actions'
+import { actionTypes } from '../actions/actions'
 import { HYDRATE } from 'next-redux-wrapper'
 
 const initialState = {
@@ -10,6 +10,7 @@ const initialState = {
 }
 
 function reducer(state, action) {
+  debugger; // MongLV
   switch (action.type) {
     case HYDRATE: {
       return { ...state, ...action.payload }

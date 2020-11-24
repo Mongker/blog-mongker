@@ -45,6 +45,7 @@ export function startClock() {
 }
 
 export function tickClock(isServer) {
+  debugger; // MongLV
   return {
     type: actionTypes.TICK_CLOCK,
     light: !isServer,

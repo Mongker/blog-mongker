@@ -1,29 +1,36 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { END } from 'redux-saga'
-import { wrapper } from '../store'
-import { loadData, startClock, tickClock } from '../actions'
-import Page from '../components/page'
+import React from 'react';
+// import PropTypes from 'prop-types';
+import HeadView from  '../components/HeadView'
+import { Layout, Menu } from 'antd';
 
-const Index = () => {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(startClock())
-  }, [dispatch])
-
-  return <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />
+// styles
+// import styles from '../styles/index.css'
+const { Header, Content, Footer } = Layout;
+function Index() {
+    return(
+        <div className={'root-container'}>
+          <HeadView />
+          <Layout>
+            <Header>
+              <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu.Item key="1">nav 1</Menu.Item>
+                <Menu.Item key="2">nav 2</Menu.Item>
+                <Menu.Item key="3">nav 3</Menu.Item>
+              </Menu>
+            </Header>
+            <Content>Content</Content>
+            <Footer>Footer</Footer>
+          </Layout>
+          <style jsx>{`
+            .root-container { font-family: "Times New Roman";}
+            .root-container header .ant-layout-header { padding-left: 50%;}
+          `}</style>
+        </div>
+    );
 }
 
-export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  store.dispatch(tickClock(false))
+Index.propTypes = {};
 
-  if (!store.getState().placeholderData) {
-    store.dispatch(loadData())
-    store.dispatch(END)
-  }
+Index.defaultProps = {};
 
-  await store.sagaTask.toPromise()
-})
-
-export default Index
+export default Index;

@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0814c0d1-8839-4c20-b5c3-418234a394fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/HeadView.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/other.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/other.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/sagas/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,9 +46,25 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="E:\MongLV\Project Web\blog-mongker\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3 new\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\MongLV\Project Web\blog-mongker\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\MongLV\Project Web\blog-mongker\redux" />
+      <recent name="E:\MongLV\Project Web\blog-mongker\redux\actions" />
+      <recent name="E:\MongLV\Project Web\blog-mongker\redux\sagas" />
+      <recent name="E:\MongLV\Project Web\blog-mongker\redux\reducers" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -36,6 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606224368094</updated>
       <workItem from="1606224370250" duration="176000" />
+      <workItem from="1606225184250" duration="9493000" />
     </task>
     <task id="LOCAL-00001" summary="MongLV: setting redux-">
       <created>1606224471221</created>
@@ -50,6 +90,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="MongLV: setting redux-saga" />
@@ -60,9 +110,41 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606224470268" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1606236311401">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606236311401" />
+    <state x="352" y="142" key="EditFileWatcherDialog" timestamp="1606238765617">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1606238765617" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606235456060">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606235456060" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606235456059">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606235456059">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606235456059">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606224486653">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606224486653" />
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606236310824">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1606236310824" />
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606237137560">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606237137560" />
   </component>
 </project>

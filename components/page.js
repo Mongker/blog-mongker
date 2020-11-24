@@ -9,6 +9,7 @@ function Page({ linkTo, NavigateTo, title }) {
   const error = useSelector((state) => state.error)
   const light = useSelector((state) => state.light)
   const lastUpdate = useSelector((state) => state.lastUpdate)
+  debugger; // MongLV
   return (
     <div>
       <h1>{title}</h1>
