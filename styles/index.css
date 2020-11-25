@@ -1,0 +1,62 @@
+.mobile_controller_page {
+    font-family: "Times New Roman";
+}
+.mobile_header {
+    background-color: #dd3333;
+    display: block;
+    height: 200px;
+}
+.mobile_controller_header {
+    height: 50px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dd3333;
+    text-align: center;
+    color: white;
+}
+.mobile_item_header {
+    font-size: 24px;
+    color: white;
+}
+.mobile_title_header {
+    font-size: 24px;
+    font-weight: bold;
+}
+.mobile_controller_header .ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+    background: orange;
+    border-radius: 25px;
+}
+.mobile_search_input {
+    display: flex;
+    position: absolute;
+    -webkit-box-align: center;
+    align-items: center;
+    top: 48px;
+    left: 12px;
+    right: 12px;
+    z-index: 1;
+    line-height: 36px;
+    padding: 0px 12px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    transition-duration: 0.3s;
+}
+.mobile_search_input input {
+    border: 0px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0px 0px 0px 8px;
+    outline: 0px;
+    width: 100%;
+    padding: 0px;
+}
+[type="search"] {
+    appearance: textfield;
+    outline-offset: -2px;
+}
+.mobile_slider_header {
+    margin-top: 50px;
+}

@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0814c0d1-8839-4c20-b5c3-418234a394fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/HeadView.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/other.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/other.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/sagas/saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +45,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\MongLV\Project Web\blog-mongker\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\MongLV\Project Web\blog-mongker\styles" />
       <recent name="E:\MongLV\Project Web\blog-mongker\redux" />
       <recent name="E:\MongLV\Project Web\blog-mongker\redux\actions" />
       <recent name="E:\MongLV\Project Web\blog-mongker\redux\sagas" />
       <recent name="E:\MongLV\Project Web\blog-mongker\redux\reducers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\MongLV\Project Web\blog-mongker\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,7 +65,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606224368094</updated>
       <workItem from="1606224370250" duration="176000" />
-      <workItem from="1606225184250" duration="9493000" />
+      <workItem from="1606225184250" duration="9803000" />
+      <workItem from="1606326775546" duration="8647000" />
     </task>
     <task id="LOCAL-00001" summary="MongLV: setting redux-">
       <created>1606224471221</created>
@@ -84,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606224471221</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MongLV: Fix">
+      <created>1606240379938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606240379938</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,13 +101,18 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="MongLV: setting redux-saga" />
-    <option name="LAST_COMMIT_MESSAGE" value="MongLV: setting redux-saga" />
+    <MESSAGE value="MongLV: Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="MongLV: Fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1606224470268">
+    <state x="485" y="220" key="#Configure_Path_Variables" timestamp="1606332008524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606224470268" />
+    <state x="485" y="220" key="#Configure_Path_Variables/0.0.1366.728@0.0.1366.728" timestamp="1606332008524" />
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1606240378956">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606240378956" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1606236311401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -118,33 +121,41 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1606238765617" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606235456060">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606240416672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606235456060" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606235456059">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606240416672" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606240416672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606235456059">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606240416672" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606240416670">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606235456059">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606240416670" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606240416672">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606235456059" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606224486653">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606240416672" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606240388405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606224486653" />
-    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606236310824">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606240388405" />
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606331444002">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1606236310824" />
+    <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1606331444002" />
+    <state x="500" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606331303046">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606331303046" />
     <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606237137560">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606237137560" />
+    <state x="339" y="166" key="run.anything.popup" timestamp="1606332247935">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606332247935" />
   </component>
 </project>
