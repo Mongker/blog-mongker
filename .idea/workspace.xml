@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0814c0d1-8839-4c20-b5c3-418234a394fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,8 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="E:\MongLV\Project Web\blog-mongker\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3 new\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -66,7 +67,8 @@
       <updated>1606224368094</updated>
       <workItem from="1606224370250" duration="176000" />
       <workItem from="1606225184250" duration="9803000" />
-      <workItem from="1606326775546" duration="8647000" />
+      <workItem from="1606326775546" duration="9127000" />
+      <workItem from="1606832143296" duration="4429000" />
     </task>
     <task id="LOCAL-00001" summary="MongLV: setting redux-">
       <created>1606224471221</created>
@@ -82,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606240379938</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MongLV: Cắt css">
+      <created>1606335744580</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606335744580</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,17 +111,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="MongLV: setting redux-saga" />
     <MESSAGE value="MongLV: Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="MongLV: Fix" />
+    <MESSAGE value="MongLV: Cắt css home" />
+    <option name="LAST_COMMIT_MESSAGE" value="MongLV: Cắt css home" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="220" key="#Configure_Path_Variables" timestamp="1606332008524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="485" y="220" key="#Configure_Path_Variables/0.0.1366.728@0.0.1366.728" timestamp="1606332008524" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1606240378956">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1606335743735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606240378956" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606335743735" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1606236311401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -137,10 +147,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606240416672" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606240388405">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1606834352837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606240388405" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606834352837" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606335754347">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606335754347" />
     <state x="288" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606331444002">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -149,10 +163,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606331303046" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606237137560">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606833232839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606237137560" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606833232839" />
     <state x="339" y="166" key="run.anything.popup" timestamp="1606332247935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

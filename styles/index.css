@@ -30,6 +30,7 @@
     border-radius: 25px;
 }
 .mobile_search_input {
+    height: 36px;
     display: flex;
     position: absolute;
     -webkit-box-align: center;
@@ -59,4 +60,20 @@
 }
 .mobile_slider_header {
     margin-top: 50px;
+}
+.mobile_menu_category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 91px;
+    background-color: white;
+}
+.mobile_menu_category_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-family:  Roboto, Helvetica, Arial, sans-serif;
 }
