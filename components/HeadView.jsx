@@ -22,7 +22,7 @@ function HeadView() {
       <meta name='description' content='Shop mỹ phẩm Vân Kelly' />
       <meta name='robots' content='index, follow' />
       <meta name='author' content='Vân Kelly' />
-      <meta property='og:url' content='https://developers.zalo.me/' />
+      <meta property='og:url' content='https://mongker.cf/' />
       <meta property='og:title' content='Shop Vân Kelly' />
       <meta
         property='og:image'
