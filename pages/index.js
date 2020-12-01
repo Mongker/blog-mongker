@@ -46,26 +46,32 @@ function Index() {
           <img
             width={windowSize.widthApp * 0.9}
             heigth={(windowSize.widthApp * 0.9) / 2}
-            src='https://salt.tikicdn.com/cache/w828/ts/banner/c3/dc/8f/5459f71a05c87b15d7d98c9a87197d32.jpg'
+            src='https://adminbeauty.hvnet.vn/Upload/Files/banner-web-blackfriday.png?width=1170&height=450&v=15042020'
             alt='https://tiki.vn/chuong-trinh/wipro-unza'
           />
         </div>
         <div className={'mobile_menu_category'}>
           <div className={'mobile_menu_category_item'}>
-            <img src='https://salt.tikicdn.com/ts/banner/88/24/ee/0d45f0406c93794bae645c1cbb8353b5.png' alt='Danh mục' width={44} height={44} />
+            <img className={'btn-shake'} src='https://salt.tikicdn.com/ts/banner/88/24/ee/0d45f0406c93794bae645c1cbb8353b5.png' alt='Danh mục' width={44} height={44} />
             <span>Danh mục</span>
           </div>
           <div className={'mobile_menu_category_item'}>
-            <img src='https://salt.tikicdn.com/ts/banner/c8/21/10/d5c3cb6f11a22fab2da3f6cfbdd5d5b6.gif' alt='KellyLive' width={44} height={44} />
-            <span>KellyLive</span>
+            <img
+              className={'btn-shake'}
+              src='https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png'
+              alt='Facebook'
+              width={44}
+              height={44}
+            />
+            <span>Facebook</span>
           </div>
           <div className={'mobile_menu_category_item'}>
-            <img src='https://salt.tikicdn.com/ts/banner/dd/2b/00/831cc84001481261619b27f4102fcec5.png' alt='Tươi sốngs' width={44} height={44} />
-            <span>Tươi sống</span>
+            <img className={'btn-shake'} src='https://www.flaticon.com/svg/static/icons/svg/2518/2518016.svg' alt='Tươi sốngs' width={44} height={44} />
+            <span>Kiến thức</span>
           </div>
           <div className={'mobile_menu_category_item'}>
-            <img src='https://salt.tikicdn.com/ts/banner/90/ac/4a/44d0bc2683f131cd45fc8d767b794d21.gif' alt='FREESHIP' width={44} height={44} />
-            <span>FREESHIP</span>
+            <img className={'btn-shake'} src='https://www.flaticon.com/svg/static/icons/svg/906/906382.svg' alt='FREESHIP' width={44} height={44} />
+            <span>Zalo</span>
           </div>
         </div>
       </div>

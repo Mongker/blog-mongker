@@ -23,6 +23,7 @@
 .mobile_title_header {
     font-size: 24px;
     font-weight: bold;
+    font-family: Permanent Marker,cursive;
 }
 .mobile_controller_header .ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
     background: orange;
@@ -60,6 +61,9 @@
 .mobile_slider_header {
     margin-top: 50px;
 }
+.mobile_slider_header img {
+        border-radius: 15px;
+}
 .mobile_menu_category {
     display: flex;
     flex-direction: row;
@@ -76,6 +80,9 @@
     text-align: center;
     font-size: 14px;
     font-family:  Roboto, Helvetica, Arial, sans-serif;
+}
+.mobile_menu_category_item img {
+        border-radius: 15px;
 }
 .mobile_content {
     padding-left: 12px;
@@ -106,4 +113,28 @@
     color: rgb(21, 124, 219);
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btn-shake:hover {
+    animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
 }
