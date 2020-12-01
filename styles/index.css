@@ -4,7 +4,6 @@
 .mobile_header {
     background-color: #dd3333;
     display: block;
-    height: 200px;
 }
 .mobile_controller_header {
     height: 50px;
@@ -67,6 +66,7 @@
     justify-content: space-around;
     height: 91px;
     background-color: white;
+    border-bottom: 10px solid #d4cfcf !important;
 }
 .mobile_menu_category_item {
     display: flex;
@@ -76,4 +76,34 @@
     text-align: center;
     font-size: 14px;
     font-family:  Roboto, Helvetica, Arial, sans-serif;
+}
+.mobile_content {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.mobile_content_item {
+    display: flex;
+    flex-direction: row;
+}
+.mobile_content_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-end;
+}
+.mobile_content_item_title {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+}
+.read_more {
+    position: absolute;
+    right: 0px;
+    font-size: 13px;
+    padding-right: 12px;
+    font-weight: 500;
+    color: rgb(21, 124, 219);
+    text-transform: uppercase;
+    text-decoration: none;
 }

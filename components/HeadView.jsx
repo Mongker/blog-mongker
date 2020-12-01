@@ -12,24 +12,28 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 function HeadView() {
-    return(
-      <Head>
-        <title>Log Bug</title>
-        <link rel='icon' href='https://www.flaticon.com/svg/static/icons/svg/3779/3779253.svg' />
-        <meta name='description' content='Cuộc sống em khỏe không' />
-        <meta name='robots' content='index, follow' />
-        <meta name='author' content='mongker' />
-        <meta property='og:url' content='https://developers.zalo.me/' />
-        <meta property='og:title' content='Zalo For Developers' />
-        <meta property='og:image' content='https://developers.zalo.me/web/static/prodution/zalo.png' />
-        <meta property='og:description' content='Trang thông tin về Zalo dành cho cộng đồng lập trình viên' />
-      </Head>
-    );
+  return (
+    <Head>
+      <title>Log Bug</title>
+      <link
+        rel='icon'
+        href='https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-1/p200x200/124233278_2773456099600121_8948442255433859966_o.jpg?_nc_cat=111&ccb=2&_nc_sid=7206a8&_nc_ohc=1QngHnmoCYQAX9AZYdI&_nc_ht=scontent.fhan5-3.fna&tp=6&oh=cc4c6ffc1c3c71cb4490d73e6e598076&oe=5FEB7841'
+      />
+      <meta name='description' content='Shop mỹ phẩm Vân Kelly' />
+      <meta name='robots' content='index, follow' />
+      <meta name='author' content='Vân Kelly' />
+      <meta property='og:url' content='https://developers.zalo.me/' />
+      <meta property='og:title' content='Shop Vân Kelly' />
+      <meta
+        property='og:image'
+        content='https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-1/p200x200/124233278_2773456099600121_8948442255433859966_o.jpg?_nc_cat=111&ccb=2&_nc_sid=7206a8&_nc_ohc=1QngHnmoCYQAX9AZYdI&_nc_ht=scontent.fhan5-3.fna&tp=6&oh=cc4c6ffc1c3c71cb4490d73e6e598076&oe=5FEB7841'
+      />
+      <meta property='og:description' content='Shop mỹ phẩm Vân Kelly ' />
+    </Head>
+  );
 }
 
-HeadView.propTypes = {
-
-};
+HeadView.propTypes = {};
 
 HeadView.defaultProps = {};
 
