@@ -11,16 +11,13 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-function HeadView({ title, description, url, image }) {
+function HeadView({ title, description, url, image, icon, name }) {
   return (
     <Head>
-      <title>Shop Vân Kelly</title>
-      <link
-        rel='icon'
-        href='https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-1/p200x200/124233278_2773456099600121_8948442255433859966_o.jpg?_nc_cat=111&ccb=2&_nc_sid=7206a8&_nc_ohc=1QngHnmoCYQAX9AZYdI&_nc_ht=scontent.fhan5-3.fna&tp=6&oh=cc4c6ffc1c3c71cb4490d73e6e598076&oe=5FEB7841'
-      />
+      <title>{title}</title>
+      <link rel='icon' href={icon} />
       <meta name='robots' content='index, follow' />
-      <meta name='author' content='Quỳnh Vân' />
+      <meta name='author' content={name} />
       {/* SEO google, facebook */}
       <meta property='og:url' content={url} />
       <meta property='og:type' content='article' />
@@ -41,6 +38,9 @@ HeadView.propTypes = {
 };
 
 HeadView.defaultProps = {
+  name: 'Quỳnh Vân',
+  icon:
+    'https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-1/p200x200/124233278_2773456099600121_8948442255433859966_o.jpg?_nc_cat=111&ccb=2&_nc_sid=7206a8&_nc_ohc=1QngHnmoCYQAX9AZYdI&_nc_ht=scontent.fhan5-3.fna&tp=6&oh=cc4c6ffc1c3c71cb4490d73e6e598076&oe=5FEB7841',
   title: 'Mỹ phẩm Quỳnh Vân',
   url: 'https://mongker.cf/',
   image:
