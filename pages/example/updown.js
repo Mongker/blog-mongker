@@ -15,8 +15,17 @@ function Example1() {
   return <UpDownContainer />;
 }
 
-Example1.propTypes = {};
+export async function getStaticProps() {
+  const res = await fetch('https://server-mybook-1r1b2ebod.vercel.app/api/product');
+  // const res = await fetch('https://api.github.com/repositories/42283287');
+  console.log('res: ', res);
+  const json = await res.json();
 
-Example1.defaultProps = {};
+  return {
+    props: {
+      res: json,
+    },
+  };
+}
 
 export default Example1;

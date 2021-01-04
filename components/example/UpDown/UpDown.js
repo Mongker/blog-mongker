@@ -12,18 +12,25 @@ import PropTypes from 'prop-types';
 import { Button } from 'antd';
 import HeadView from '../../HeadView';
 
+// styles
+import styles from './index.module.css';
+
 function UpDown({ count, onDown, onUp }) {
   return (
-    <div>
-      <HeadView title={'tăng giảm số'} />
-      <h3> React Class Component</h3>
-      <h3>Totals: {count}</h3>
-      <Button type='primary' onClick={() => onUp(1)}>
-        Up (+)
-      </Button>
-      <Button type='primary' danger onClick={() => onDown(1)}>
-        Down (-)
-      </Button>
+    <div className={styles.container}>
+      <div>
+        <HeadView title={'tăng giảm số'} />
+        <h3> React Class Component</h3>
+        <h3>Totals: {count}</h3>
+      </div>
+      <div>
+        <Button type='primary' onClick={() => onUp(1)}>
+          Up (+)
+        </Button>
+        <Button type='primary' danger onClick={() => onDown(1)}>
+          Down (-)
+        </Button>
+      </div>
     </div>
   );
 }
