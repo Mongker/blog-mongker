@@ -9,6 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HeadView from '../../HeadView';
+import { Image } from 'antd';
 
 function ABook({ product }) {
   const index = Math.floor(Math.random() * 10);
@@ -16,7 +17,7 @@ function ABook({ product }) {
   const dataObj = product[arrProduct[index]];
   console.log('dataObj: ', dataObj);
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 25, justifyContent: 'center', alignItems: 'center' }}>
       <HeadView
         title={dataObj.name}
         description={dataObj.description}
@@ -24,7 +25,8 @@ function ABook({ product }) {
         icon={`https://server-mybook-1r1b2ebod.vercel.app/api/file/${dataObj.image_link[0]}`}
         name={dataObj.name}
       />
-      Mong
+      <Image src={`https://server-mybook-1r1b2ebod.vercel.app/api/file/${dataObj.image_link[0]}`} />
+      <span>{dataObj.name}</span>
     </div>
   );
 }
