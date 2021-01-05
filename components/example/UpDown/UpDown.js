@@ -9,13 +9,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'antd';
+import { Button, Image } from 'antd';
 import HeadView from '../../HeadView';
 
 // styles
 import styles from './index.module.css';
 
-function UpDown({ count, onDown, onUp }) {
+function UpDown({ count, onDown, onUp, product }) {
   return (
     <div className={styles.container}>
       <div>
@@ -31,6 +31,15 @@ function UpDown({ count, onDown, onUp }) {
           Down (-)
         </Button>
       </div>
+      <h1>Sách hay</h1>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'baseline' }}>
+        {Object.keys(product).map((item) => (
+          <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 25, justifyContent: 'center', alignItems: 'center' }}>
+            <Image src={`https://server-mybook-1r1b2ebod.vercel.app/api/file/${product[item].image_link[0]}`} width={200} height={400} />
+            <div style={{ color: 'red', fontWeight: 'bolder' }}>{product[item].name}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -39,6 +48,7 @@ UpDown.propTypes = {
   onUp: PropTypes.func,
   onDown: PropTypes.func,
   times: PropTypes.number,
+  product: PropTypes.object,
 };
 
 UpDown.defaultProps = {

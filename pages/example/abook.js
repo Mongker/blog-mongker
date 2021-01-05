@@ -11,10 +11,10 @@ import React from 'react';
 import axios from 'axios';
 
 // components
-import UpDownContainer from '../../components/example/UpDown/UpDownContainer';
+import ABook from '../../components/example/ABook/ABook';
 
-function Example1({ product = {} }) {
-  return <UpDownContainer product={product} />;
+function Example2({ product = {} }) {
+  return <ABook product={product} />;
 }
 
 // Note sau này phải tạo file API base để xử lý
@@ -39,4 +39,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Example1;
+export default Example2;
