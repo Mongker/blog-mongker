@@ -16,6 +16,9 @@ import HeadView from '../../HeadView';
 import styles from './index.module.css';
 
 function UpDown({ count, onDown, onUp, product }) {
+  if (!product) {
+    location.reload();
+  }
   return (
     <div className={styles.container}>
       <div>

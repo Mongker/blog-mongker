@@ -15,7 +15,6 @@ function ABook({ product }) {
   const index = Math.floor(Math.random() * 10);
   const arrProduct = Object.keys(product);
   const dataObj = product[arrProduct[index]];
-  console.log('dataObj: ', dataObj);
   return (
     <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 25, justifyContent: 'center', alignItems: 'center' }}>
       <HeadView

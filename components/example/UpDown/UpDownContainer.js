@@ -16,12 +16,25 @@ import UpDown from './UpDown';
 // Action
 import { actionDown, actionUp } from '../../../redux/actions/example/updownActions';
 
+// Selector
+import { upDownSelector } from 'redux/selector/example/upDownSelector';
+
 const mapStateToProps = (state) => {
-  console.log('state', state);
+  const count = upDownSelector(state);
   return {
-    count: state.Counts,
+    count,
   };
 };
+
+// const makeMapStateToProps = () => {
+//   const mapStateToProps = (state) => {
+//     const count = upDownSelector(state);
+//     return {
+//       count,
+//     };
+//   };
+//   return mapStateToProps;
+// };
 
 const mapDispatchToProps = (dispatch) => ({
   onUp: (data) => dispatch(actionUp(data)),

@@ -25,13 +25,8 @@ function getListProduct_API() {
     .catch((error) => console.log(error));
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(content) {
   const res = await getListProduct_API();
-  if (!res) {
-    return {
-      notFound: true,
-    };
-  }
   return {
     props: {
       product: res,
