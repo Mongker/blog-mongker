@@ -9,7 +9,6 @@
 
 import axios from 'axios';
 import React from 'react';
-import { useRouter } from 'next/router';
 import RutGonLink from '../../../components/example/RutGonLink/RutGonLink';
 // import PropTypes from 'prop-types';
 
@@ -31,7 +30,7 @@ export async function getStaticProps(params) {
     const res = await getURL_API(params.params.url);
     if (!res) {
         return {
-            notFound: false,
+            notFound: true,
         };
     }
     console.log('params: ', params);
