@@ -17,8 +17,8 @@ import RutGonLink from '../../../components/example/RutGonLink/RutGonLink';
 function getURL_API(url_compact) {
     return (
         axios
-            // .get(`https://server-mybook-1r1b2ebod.vercel.app/api/url/${url_compact}`)
-            .get(`http://localhost:1999/api/url/${url_compact}`)
+            .get(`https://server-mybook-1r1b2ebod.vercel.app/api/url/${url_compact}`)
+            // .get(`http://localhost:1999/api/url/${url_compact}`)
             .then((res) => res.data)
             .catch((error) => console.log(error))
     );
