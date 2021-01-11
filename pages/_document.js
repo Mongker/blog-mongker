@@ -9,12 +9,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { GA_TRACKING_ID } from '../lib/gtag';
-// <script data-ad-client='ca-pub-2616710485643965' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>;
 export default class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
+                    <script data-ad-client='ca-pub-2616710485643965' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
                     <script
