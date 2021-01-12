@@ -10,7 +10,7 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 // import PropTypes from 'prop-types';
-
+// Thao khảo upload file tại đây: https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 function TinyMceEditor() {
     const [text, setText] = React.useState('');
     const [Img, setImg] = React.useState([]);
