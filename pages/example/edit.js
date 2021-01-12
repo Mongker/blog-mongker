@@ -8,10 +8,12 @@
  */
 
 import React from 'react';
-import DraftMain from '../../components/example/DraftJS';
+// import DraftMain from '../../components/example/DraftJS';
+import TinyMceEditor from '../../components/example/Tinymce/TinyMceEditor';
 // import PropTypes from 'prop-types';
 
 function edit() {
-  return <DraftMain />;
+    // return <DraftMain />;
+    return <TinyMceEditor />;
 }
 export default edit;

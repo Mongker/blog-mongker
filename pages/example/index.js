@@ -27,6 +27,16 @@ function index() {
             url: '/example/updown',
             content: 'Sử dụng Redux + Saga để xử lý các sự kiện trong ReactJS',
         },
+        {
+            name: 'Chức năng Edit văn bản',
+            url: '/example/edit',
+            content: 'Ví dụ này sử dụng thư viện DractJS để tạo dữ liệu text ',
+        },
+        {
+            name: 'Demo web rút gọn link',
+            url: '/example/link/mong',
+            content: 'Ví dụ này sử dụng kỹ thuật rút gọn link',
+        },
     ];
     return (
         <div className={styles.controller}>
@@ -35,7 +45,6 @@ function index() {
             {data.map((item, index) => (
                 <div className={styles.controller_item}>
                     <span className={styles.title}>Ví dụ {index + 1}</span>
-
                     <Tooltip trigger={'hover'} placement={'right'} title={item.content}>
                         <span role={'button'} onClick={() => onClickNext(item.url)} style={{ cursor: 'pointer' }}>
                             {item.name}

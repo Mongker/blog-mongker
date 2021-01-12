@@ -1,7 +1,7 @@
 .controller {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
 }
 .controller_item {
@@ -9,6 +9,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
+}
+.controller_item:hover {
+    color: #dd3333;
 }
 .title {
     font-size: 20px;
