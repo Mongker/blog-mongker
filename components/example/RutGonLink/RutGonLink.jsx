@@ -34,6 +34,7 @@ function RutGonLink({ name, url }) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <h1 style={{ color: 'red' }}>{url}</h1>
+            <h1 style={{ color: 'red' }}>{name}</h1>
             <Button onClick={onNextLink}>Chuyển link</Button>
             <Link href={'/'}>Về home</Link>
             <iframe src={url} width={windowSize.widthApp} height={windowSize.heightApp} />
