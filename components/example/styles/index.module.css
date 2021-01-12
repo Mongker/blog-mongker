@@ -1,0 +1,17 @@
+.controller {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.controller_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 20px;
+}
