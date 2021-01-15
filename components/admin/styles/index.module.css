@@ -1,12 +1,19 @@
-.logo {
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
 .site_layout .site_layout_background {
     background: #fff;
 }
 [data-theme="dark"] .site_layout .site_layout_background {
     background: #141414;
+}
+.logo {
+    height: 32px;
+    margin: 16px;
+    /* background: #3a3a3a; */
+    font-family: cursive;
+    color: pink;
+    font-size: 25px;
+    /* text-align: center; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

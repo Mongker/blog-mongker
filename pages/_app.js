@@ -1,9 +1,10 @@
 import { wrapper } from '../redux/store';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
 import 'antd/dist/antd.css';
-import '../styles/index.css';
+import '../styles/index.scss';
+
 function App({ Component, pageProps }) {
     const router = useRouter();
     useEffect(() => {
@@ -15,6 +16,7 @@ function App({ Component, pageProps }) {
             router.events.off('routeChangeComplete', handleRouteChange);
         };
     }, [router.events]);
+
     return <Component {...pageProps} />;
 }
 

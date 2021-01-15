@@ -9,8 +9,12 @@
 
 import { combineReducers } from 'redux';
 import Counts from './example/updownReducers';
+import Catalog from './shopmypham/catalogReducer';
+import WindowSize from './shopmypham/windowSizeReducer';
 
 const rootReducer = combineReducers({
-  Counts: Counts,
+    Counts: Counts,
+    Catalog: Catalog,
+    WindowSize: WindowSize,
 });
 export default rootReducer;

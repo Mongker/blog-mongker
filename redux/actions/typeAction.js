@@ -8,8 +8,13 @@
  */
 
 const typeAction = {
-  UP: 'UP',
-  DOWN: 'DOWN',
+    UP: 'UP',
+    DOWN: 'DOWN',
+    SHOP_MY_PHAM: {
+        CALL_GET_LIST_CATALOG: 'CALL_GET_LIST_CATALOG',
+        GET_LIST_CATALOG: 'GET_LIST_CATALOG',
+        WINDOW_SIZE: 'WINDOW_SIZE'
+    },
 };
 
 export default typeAction;

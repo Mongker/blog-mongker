@@ -10,7 +10,7 @@
 import React from 'react';
 import { Menu } from 'antd';
 import PropTypes from 'prop-types';
-import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
+import { LogoutOutlined, DollarOutlined, ShoppingCartOutlined, UserOutlined, HomeOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 // const
 const { SubMenu } = Menu;
@@ -22,22 +22,25 @@ function MenuView(props) {
     };
     return (
         <Menu theme='dark' defaultSelectedKeys={[objectKey.HOME]} mode='inline' onClick={handleClick} k>
-            <Menu.Item key={objectKey.HOME} icon={<PieChartOutlined />}>
+            <Menu.Item key={objectKey.HOME} icon={<HomeOutlined />}>
                 Trang chủ
             </Menu.Item>
-            <Menu.Item key={objectKey.DANH_MUC} icon={<DesktopOutlined />}>
+            <Menu.Item key={objectKey.DANH_MUC} icon={<UnorderedListOutlined />}>
                 Danh mục
             </Menu.Item>
-            <SubMenu key='sub1' icon={<UserOutlined />} title='User'>
-                <Menu.Item key='3'>Tom</Menu.Item>
-                <Menu.Item key='4'>Bill</Menu.Item>
-                <Menu.Item key='5'>Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key='sub2' icon={<TeamOutlined />} title='Team'>
-                <Menu.Item key='6'>Team 1</Menu.Item>
-                <Menu.Item key='8'>Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key={objectKey.LOGOUT} icon={<FileOutlined />}>
+            <Menu.Item key={objectKey.SAN_PHAM} icon={<DollarOutlined />}>
+                Sản phẩm
+            </Menu.Item>
+            <Menu.Item key={objectKey.DON_DAT_HANG} icon={<ShoppingCartOutlined />}>
+                Đơn đặt hàng
+            </Menu.Item>
+            <Menu.Item key={objectKey.KHACH_HANG} icon={<UserOutlined />}>
+                Khách hàng
+            </Menu.Item>
+            <Menu.Item key={objectKey.NHAN_VIEN} icon={<UserOutlined />}>
+                Nhân viên
+            </Menu.Item>
+            <Menu.Item key={objectKey.LOGOUT} icon={<LogoutOutlined />}>
                 Đăng xuất
             </Menu.Item>
         </Menu>
@@ -51,7 +54,13 @@ MenuView.propTypes = {
 
 MenuView.defaultProps = {
     objKeyMenu: {
-        DANH_MUC: 'Danh Mục',
+        HOME: 'Trang chủ',
+        DANH_MUC: 'Danh mục',
+        SAN_PHAM: 'Sản phẩm',
+        DON_DAT_HANG: 'Đơn đặt hàng',
+        KHACH_HANG: 'Quản lý khách hàng',
+        NGUOI_DUNG: 'Quản lý tài khoản',
+        LOGOUT: 'Đăng xuất',
     },
     setCheckKey: () => {},
 };

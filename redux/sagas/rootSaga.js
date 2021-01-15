@@ -10,11 +10,9 @@
 import { all } from 'redux-saga/effects';
 
 // watch saga
-// import {} from
+import { watcherCallListCatalog } from './shopmypham/catalogSaga';
 
 // saga
 export default function* rootSaga() {
-  yield all([
-    // watcherCallPost(),
-  ]);
+    yield all([watcherCallListCatalog()]);
 }

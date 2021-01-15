@@ -1,0 +1,44 @@
+.header{
+    font-size: 25px;
+}
+.site_layout{
+    background-image: url('image/mypham.jpg');
+    background-repeat: no-repeat, repeat;
+    background-color: pink;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.container{
+    width: 100%;
+    height: 550px;
+    /*max-width: 1200px;*/
+    margin-left: auto;
+    margin-top: 0px;
+    margin-right: auto;
+}
+.loginForm{
+    width: 100%;
+    max-width: 500px;
+    margin: 65px auto;
+    background-color: #ffffff;
+    border:1px solid black;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+}
+.h2{
+    color : #33c6d6;
+    text-align: center;
+}
+.formItem{
+    margin-left: -25px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.formName{
+    color: #dd0917;
+    text-align: center;
+    margin-top: 65px;
+}

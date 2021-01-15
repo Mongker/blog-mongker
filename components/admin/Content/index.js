@@ -9,18 +9,36 @@
 
 import React from 'react';
 import { Breadcrumb } from 'antd';
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+
+// style
 import styles from '../styles/index.module.css';
 
+// JSX
+import DanhMucContaier from './DanhMuc/DanhMucContainer';
+import Home from './Home/TrangChu';
+
 function ContentView(props) {
-    const { checkKey } = props;
+    const { checkKey, objectKey } = props;
+    let componentContent;
+    if (checkKey === objectKey.DANH_MUC) {
+        componentContent = <DanhMucContaier />;
+    } else if (checkKey === objectKey.HOME) {
+        componentContent = <Home />;
+    }
+
     return (
         <div>
             <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>User</Breadcrumb.Item>
-                <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                <Breadcrumb.Item href=''>
+                    <HomeOutlined />
+                </Breadcrumb.Item>
+                <Breadcrumb.Item href=''>
+                    <span>{checkKey}</span>
+                </Breadcrumb.Item>
             </Breadcrumb>
             <div className={styles.site_layout_background} style={{ padding: 24, minHeight: 360 }}>
-                {checkKey}
+                {componentContent}
             </div>
         </div>
     );

@@ -18,13 +18,18 @@ import MenuView from './Menu/MenuView';
 
 // style
 import styles from './styles/index.module.css';
+import Logo from './Menu/Logo';
 
 // const
 const { Header, Content, Footer, Sider } = Layout;
 const objectKey = {
-    HOME: 'Trang chu',
-    DANH_MUC: 'Danh muc',
-    LOGOUT: 'Dang xuat',
+    HOME: 'Trang chủ',
+    DANH_MUC: 'Danh mục',
+    SAN_PHAM: 'Sản phẩm',
+    DON_DAT_HANG: 'Đơn đặt hàng',
+    KHACH_HANG: 'Khách hàng',
+    NHAN_VIEN: 'Nhân viên',
+    LOGOUT: 'Đăng xuất',
 };
 function Admin() {
     const [collapsed, setCollapsed] = React.useState(false);
@@ -36,7 +41,7 @@ function Admin() {
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-                <div className={styles.logo} />
+                <Logo />
                 <MenuView objectKey={objectKey} setCheckKey={setCheckKey} />
             </Sider>
             <Layout className={styles.site_layout}>
@@ -44,7 +49,7 @@ function Admin() {
                     <HeaderView checkKey={checkKey} />
                 </Header>
                 <Content style={{ margin: '0 16px' }}>
-                    <ContentView checkKey={checkKey} />
+                    <ContentView checkKey={checkKey} objectKey={objectKey} />
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
                     <FooterView checkKey={checkKey} />
