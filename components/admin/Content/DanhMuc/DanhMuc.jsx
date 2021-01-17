@@ -13,12 +13,9 @@ import { Tree } from 'antd';
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import TitleTree from './TitleTree/TitleTree';
 
-// const
-const { DirectoryTree } = Tree;
-
 function DanhMuc(props) {
     const { getList, catalog } = props;
-    const [treeData, setTreeData] = React.useState([])
+    const [treeData, setTreeData] = React.useState([]);
 
     const onSelect = (keys, info) => {
         console.log('Trigger Select', keys, info);
@@ -28,47 +25,69 @@ function DanhMuc(props) {
         console.log('Trigger Expand');
     };
 
+    // Dữ liệu fake để làm giao diện
+    const treeDataFake = [
+        {
+            title: <TitleTree name={'mỹ phẩm ngoại quốc'} />,
+            icon: <div style={{ fontSize: 20 }}>✯</div>,
+            key: '0-0',
+            children: [
+                { title: 'leaf 0-0', key: '0-0-0', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
+                { title: 'leaf 0-1', key: '0-0-1', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
+            ],
+        },
+        {
+            title: <TitleTree name={'mỹ phẩm ngoại quốc'} />,
+            icon: <div style={{ fontSize: 20 }}>✯</div>,
+            key: '0-1',
+            children: [
+                { title: <TitleTree name={'mỹ phẩm ngoại quốc'} />, key: '0-1-0', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
+                { title: <TitleTree name={'mỹ phẩm ngoại quốc'} />, key: '0-1-1', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
+            ],
+        },
+    ];
+
     const setChildren = (arrayObj, id, key) => {
         const children = [];
         let dem = 0;
         arrayObj.map((itemChildren) => {
-            if(itemChildren.paramId === id) {
+            if (itemChildren.paramId === id) {
                 const _key = `${key}-${dem}`;
                 children.push({
                     title: <TitleTree name={itemChildren.name} />,
                     key: _key,
-                    icon: <div style={{fontSize: 20}}>✯</div>,
+                    icon: <div style={{ fontSize: 20 }}>✯</div>,
                     children: setChildren(arrayObj, itemChildren._id, _key.toString()),
-                })
+                });
                 dem = dem + 1;
             }
-        })
-        return children
-    }
+        });
+        return children;
+    };
     const updateTreeData = () => {
         let newTreeData = [];
         const arrayObj = Object.values(catalog);
         let dem = 0;
         arrayObj.map((item, i) => {
-            if(item.paramId === '-1') {
+            if (item.paramId === '-1') {
                 newTreeData.push({
-                    title:  <TitleTree name={item.name} />,
+                    title: <TitleTree name={item.name} />,
                     key: `${dem}`,
-                    icon: <div style={{fontSize: 20}}>✯</div>,
+                    icon: <div style={{ fontSize: 20 }}>✯</div>,
                     children: setChildren(arrayObj, item._id, `${dem}`),
-                })
+                });
                 dem = dem + 1;
             }
         });
         setTreeData(newTreeData);
-    }
+    };
 
     React.useEffect(() => {
         getList();
     }, []);
     React.useEffect(() => {
-        updateTreeData()
-    }, [catalog])
+        updateTreeData();
+    }, [catalog]);
     return (
         <div className={'tree_controller'}>
             <Tree
@@ -77,7 +96,8 @@ function DanhMuc(props) {
                 switcherIcon={<DownOutlined />}
                 defaultExpandedKeys={['0-0-0']}
                 onSelect={onSelect}
-                treeData={treeData}
+                treeData={treeDataFake} // Dùng tạm để dụng giao diện
+                // treeData={treeData}
             />
         </div>
     );

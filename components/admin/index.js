@@ -51,7 +51,7 @@ function Admin() {
                 <Content style={{ margin: '0 16px' }}>
                     <ContentView checkKey={checkKey} objectKey={objectKey} />
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>
+                <Footer style={{ textAlign: 'center', backgroundColor: '#d9d7d7' }}>
                     <FooterView checkKey={checkKey} />
                 </Footer>
             </Layout>

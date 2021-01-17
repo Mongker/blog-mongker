@@ -10,7 +10,7 @@
 import React from 'react';
 
 function FooterView(props) {
-    return <div>zzzzz</div>;
+    return <div style={{ color: '#d06e6e', fontFamily: 'monospace' }}>Trang quản trị website shop mỹ phẩm DaisyShop</div>;
 }
 
 export default FooterView;

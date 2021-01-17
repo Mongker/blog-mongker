@@ -37,7 +37,7 @@ function ContentView(props) {
                     <span>{checkKey}</span>
                 </Breadcrumb.Item>
             </Breadcrumb>
-            <div className={styles.site_layout_background} style={{ padding: 24, minHeight: 360 }}>
+            <div className={styles.site_layout_background} style={{ padding: 24, minHeight: 360, borderRadius: '4%' }}>
                 {componentContent}
             </div>
         </div>
