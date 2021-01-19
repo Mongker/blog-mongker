@@ -146,3 +146,27 @@
     display: flex;
 }
 
+.tree_controller .ant-tree .ant-tree-node-content-wrapper:hover {
+    background-color: #e29999;
+}
+
+.tree_controller .ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+    background-color: unset;
+}
+.tree_controller_modal_edit .ant-modal-content {
+    border-radius: 20px;
+
+}
+.tree_controller_modal_edit .ant-modal-header {
+    border-radius: 20px;
+    border-bottom: unset;
+}
+.tree_controller_modal_edit .ant-modal-close-x {
+    display: none;
+}
+.tree_controller_modal_edit .ant-modal-body {
+    display: none;
+}
+.tree_controller_modal_edit .ant-modal-footer {
+    display: none;
+}

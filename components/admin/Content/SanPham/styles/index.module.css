@@ -1,0 +1,35 @@
+.controller {
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.item_sanpham {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc!important;
+    border-left: 1px solid #ccc!important;
+    border-right: 1px solid #ccc!important;
+    height: 50px;
+}
+
+.sanpham {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.item_item {
+    height: 50px;
+    /*border: 1px solid #b883b5;*/
+    background-color: pink;
+    border-radius: 20px 20px 0 0;
+}

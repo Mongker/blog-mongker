@@ -17,15 +17,36 @@ import styles from '../styles/index.module.css';
 // JSX
 import DanhMucContaier from './DanhMuc/DanhMucContainer';
 import Home from './Home/TrangChu';
+import SanPhamContainer from './SanPham/SanPhamContainer';
+import DonDatHangContainer from './DonDatHang/DonDatHangContainer';
+import KhanhHang from './KhanhHang/KhanhHang';
+import NhanVien from './NhanVien/NhanVien';
 
 function ContentView(props) {
     const { checkKey, objectKey } = props;
     let componentContent;
-    if (checkKey === objectKey.DANH_MUC) {
-        componentContent = <DanhMucContaier />;
-    } else if (checkKey === objectKey.HOME) {
-        componentContent = <Home />;
-    }
+    switch (checkKey) {
+            case objectKey.DANH_MUC:
+                componentContent = <DanhMucContaier />;
+                break;
+            case objectKey.HOME:
+                componentContent = <Home />;
+                break;
+            case objectKey.SAN_PHAM:
+                componentContent = <SanPhamContainer />;
+                break;
+            case objectKey.DON_DAT_HANG:
+                componentContent = <DonDatHangContainer />;
+                break;
+            case objectKey.KHACH_HANG:
+                componentContent = <KhanhHang />;
+                break;
+            case objectKey.NHAN_VIEN:
+                componentContent = <NhanVien />;
+                break;
+            default:
+            // code block
+        }
 
     return (
         <div>

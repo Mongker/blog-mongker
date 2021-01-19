@@ -31,7 +31,7 @@ const data = {
 function Demo() {
     return (
         <div style={{ width: 700 }}>
-            <h2>Line Example</h2>
+            <h2>Sales chart</h2>
             <Line data={data} />
         </div>
     );

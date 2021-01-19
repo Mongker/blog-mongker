@@ -1,3 +1,21 @@
 .controller {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.event {
+    display: none;
+}
+.controller:hover .event {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.event_item {
+    font-size: 15px;
+    color: #dd0917;
+}
+.event_item:hover {
+    font-size: 20px
 }

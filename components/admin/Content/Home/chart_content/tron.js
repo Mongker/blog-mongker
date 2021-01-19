@@ -51,7 +51,7 @@ function Tron() {
     };
 
     const pieData = {
-        labels: ['(30 %) Lê Văn Mong', '(30 %) Đào Thị Thanh Mai', '(15 %) Vũ Lê Minh', '(12.5 %) Nguyễn Trường Phi', '(12.5 %) Nguyễn Vũ Hoàng'],
+        labels: ['(30 %) TRANG ĐIỂM', '(30 %) CHĂM SÓC DA', '(15 %) NƯỚC HOA', '(12.5 %) CHĂM SÓC TÓC', '(12.5 %) PHỤ KIỆN'],
         datasets: [
             {
                 data: [30, 30, 15, 12.5, 12.5],
