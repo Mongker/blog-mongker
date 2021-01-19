@@ -1,0 +1,23 @@
+.controller {
+    display: flex;
+    flex-direction: column;
+}
+.table_info {
+    display: flex;
+    flex-direction: column;
+    background-color: #e9c6c6;
+    font-size: 15px;
+    font-weight: 600;
+}
+.table_detail {
+    font-size: 15px;
+    font-weight: 600;
+}
+.item_detail {
+    height: 52px;
+    border: 1px solid #e9c6c6;
+    background-color: #ecdfdf;
+}
+.item_detail:hover {
+    background-color: #e9c6c6;
+}

@@ -9,7 +9,7 @@
 
 import React from 'react';
 import TableNhanVien from './TableNhanVien/TableNhanVien';
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
 // import PropTypes from 'prop-types';
 
 function NhanVien() {
@@ -55,6 +55,9 @@ function NhanVien() {
         <React.Fragment>
             <TableNhanVien data={data} />
             <Button style={{borderRadius: '20px', color: 'red',  fontWeight: 'bold', backgroundColor: 'pink', marginLeft: '94%', marginTop: '10px'}}>Thêm</Button>
+            <Modal>
+
+            </Modal>
         </React.Fragment>
     );
 }

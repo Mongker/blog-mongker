@@ -13,7 +13,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "antd": "^4.8.5",
-    "axios": "^0.21.1", // <= Sau khi cài đặt xong
+    "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "draft-js": "^0.11.7",
     "fs": "0.0.1-security",

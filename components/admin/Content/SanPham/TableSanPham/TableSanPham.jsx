@@ -15,7 +15,7 @@ import styles from '../styles/index.module.css';
 
 // const
 const styleName = {color: 'red', fontWeight: 'bold'};
-function TableSanPham({data}) {
+function TableSanPham({data, setIsModalVisibleEdit}) {
     return (
         <div className={styles.controller}>
             <div className={`${styles.item} ${styles.item_item}`}>
@@ -43,7 +43,7 @@ function TableSanPham({data}) {
                     <div style={{width: 120}}>{item.danhmuc}</div>
                     <div style={{width: 100}}>{item.gia_tien}</div>
                     <div style = {{width: 75, display: 'flex', justifyContent: 'space-around'}}>
-                        <EditOutlined style={{color: '#8285d2', cursor: 'pointer'}}/>
+                        <EditOutlined style={{color: '#8285d2', cursor: 'pointer'}} onClick={() => setIsModalVisibleEdit(true)}/>
                         <DeleteOutlined style={{color: 'red', cursor: 'pointer'}}/>
                     </div>
                 </div>

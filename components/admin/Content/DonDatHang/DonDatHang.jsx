@@ -9,8 +9,13 @@
 
 import React from 'react';
 import TableDonDatHang from './TableDonDatHang/TableDonDatHang';
+import { Modal } from 'antd';
+import useWindowSize from '../../../hooks/useWindowSize';
+import ContentModal from './ContentModal/ContentModal';
 // import PropTypes from 'prop-types';
 
+// const
+const stylesTitle = {color: 'red', textAlign: 'center', fontWeight: 'bold', fontSize: '24px'};
 function DonDatHang() {
     const data = [
         {
@@ -56,9 +61,25 @@ function DonDatHang() {
             status: true
         }
     ];
+    const {width} = useWindowSize();
+    const [isModalVisibleDetail, setIsModalVisibleDetail] = React.useState(false);
+
+    const handleOk = () => {
+        setIsModalVisibleDetail(false);
+    }
+
+    const handleCancel = () => {
+        setIsModalVisibleDetail(false);
+    };
+    // JSX
+    const Detail = (<div style={stylesTitle}>Chi tiết đơn hàng</div>);
+
     return(
         <React.Fragment>
-            <TableDonDatHang data={data}/>
+            <TableDonDatHang data={data} showModalDetail={setIsModalVisibleDetail} />
+            <Modal title={Detail} visible={isModalVisibleDetail} onOk={handleOk} onCancel={handleCancel} wrapClassName={'modal_controller'} width={width*0.6}>
+                <ContentModal />
+            </Modal>
         </React.Fragment>
     );
 }

@@ -16,7 +16,7 @@ import useWindowSize from '../../../../hooks/useWindowSize';
 
 // const
 const styleName = { color: 'red', fontWeight: 'bold' };
-function TableDonDatHang({ data = [] }) {
+function TableDonDatHang({ data = [], showModalDetail }) {
     const { width } = useWindowSize();
     return (
         <div className={styles.controller}>
@@ -33,7 +33,7 @@ function TableDonDatHang({ data = [] }) {
             {/*http://liulostore.com/content/images/thumbs/0006820_son-kem-black-rouge-air-fit-velvet-tint_550.jpeg*/}
             {data.map((item, index) => (
                 <div className={`${styles.item_sanpham}`} style={data.length === index + 1 ? { borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', width: width * 0.8 } : { width: width * 0.8 }}>
-                    <div style={{ width: 200, fontWeight: 'bold' }}>{item.name}</div>
+                    <div style={{ width: 200, fontWeight: 'bold' }} onClick={() => showModalDetail(true)}>{item.name}</div>
                     <div style={{ width: 140 }}>{item.date}</div>
                     <div style={{ width: 80 }}>{item.phone}</div>
                     <div style={{ width: 100 }}>{item.gia_tien}</div>

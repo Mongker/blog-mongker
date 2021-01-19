@@ -170,3 +170,18 @@
 .tree_controller_modal_edit .ant-modal-footer {
     display: none;
 }
+.modal_sanpham_controller .ant-modal-content {
+    border-radius: 20px;
+    margin-top: -90px;
+}
+.modal_sanpham_controller .ant-modal-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.modal_controller .ant-modal-content {
+    border-radius: 20px;
+}
+.modal_controller .ant-modal-header {
+     border-radius: 20px;
+     border-bottom: unset;
+ }

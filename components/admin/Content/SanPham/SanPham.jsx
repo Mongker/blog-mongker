@@ -9,9 +9,13 @@
 
 import React from 'react';
 import TableSanPham from './TableSanPham/TableSanPham';
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
+import ContentModalContainer from './ContentModal/ContentModalContainer';
+import useWindowSize from '../../../hooks/useWindowSize';
 // import PropTypes from 'prop-types';
 
+// const
+const stylesTitle = {color: 'red', textAlign: 'center', fontWeight: 'bold', fontSize: '24px'};
 function SanPham() {
     const array = [
         {
@@ -69,10 +73,34 @@ function SanPham() {
             gia_tien: '80,000 VNĐ',
         },
     ];
+    const [isModalVisibleAdd, setIsModalVisibleAdd] = React.useState(false);
+    const [isModalVisibleEdit, setIsModalVisibleEdit] = React.useState(false);
+    const {height, width} = useWindowSize();
+    const showModal = () => {
+        setIsModalVisibleAdd(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisibleAdd(false);
+        setIsModalVisibleEdit(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisibleAdd(false);
+        setIsModalVisibleEdit(false);
+    };
+    const TitleAdd = (<div style={stylesTitle}>Thêm sản phẩm</div>);
+    const TitleEdit = (<div style={stylesTitle}>Sửa sản phẩm</div>);
     return(
-        <div>
-            <TableSanPham data={array}/>
-            <Button style={{borderRadius: '20px', color: 'red',  fontWeight: 'bold', backgroundColor: 'pink', marginLeft: '94%', marginTop: '10px'}}>Thêm</Button>
+        <div className={'san-pham'}>
+            <TableSanPham data={array} setIsModalVisibleEdit={setIsModalVisibleEdit}/>
+            <Button onClick={showModal} style={{borderRadius: '20px', color: 'red',  fontWeight: 'bold', backgroundColor: 'pink', marginLeft: '94%', marginTop: '10px'}}>Thêm</Button>
+            <Modal title={TitleAdd} visible={isModalVisibleAdd} onOk={handleOk} onCancel={handleCancel} wrapClassName={'modal_sanpham_controller'} width={width*0.6}>
+                <ContentModalContainer />
+            </Modal>
+            <Modal title={TitleEdit} visible={isModalVisibleEdit} onOk={handleOk} onCancel={handleCancel} wrapClassName={'modal_sanpham_controller'} width={width*0.6}>
+                <ContentModalContainer />
+            </Modal>
         </div>
     );
 }
