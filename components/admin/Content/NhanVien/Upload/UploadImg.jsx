@@ -56,7 +56,7 @@ function UploadImg({setListImg, listImg, fileList = [], setFileList}) {
                 fileList={fileList}
                 onChange={handleChange}
             >
-                {listImg && listImg.length >= 8 ? null : (
+                {listImg && listImg.length >= 1 ? null : (
                     <div>
                         <PlusOutlined/>
                         <div style={{marginTop: 8}}>Upload</div>

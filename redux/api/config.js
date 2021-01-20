@@ -14,8 +14,10 @@
 
 'use strict';
 
+const url = 'http://localhost:1999/api/'
 export const URL_API = {
     // local: 'https://server-mybook.vercel.app/api/',
-    local: 'http://localhost:1999/api/',
+    local: url,
     // ngrok: 'https://b66cd0c7d917.ngrok.io/api/',
+    img: `${url}file/`,
 };

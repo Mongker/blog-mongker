@@ -14,77 +14,51 @@ import { DownOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import TitleTree from './TitleTree/TitleTree';
 
 function DanhMuc(props) {
-    const { getList, catalog } = props;
+    const { getList, catalog, post, remove, put } = props;
     const [treeData, setTreeData] = React.useState([]);
     const [isModalVisible, setIsModalVisible] = React.useState(false);
+    const [text, setText] = React.useState('');
+    const [idRoot, setIdRoot] = React.useState('-1');
 
-    const showModal = (type) => {
-        setIsModalVisible(true)
+    const showModal = (id) => {
+        setIdRoot(id);
+        setIsModalVisible(true);
     };
 
     const handleOk = (type) => {
-        setIsModalVisible(true)
+        setIsModalVisible(true);
     };
 
     const handleCancel = () => {
-        setIsModalVisible(false)
+        setIsModalVisible(false);
     };
 
     const onSelect = (keys, info) => {
         console.log('Trigger Select', keys, info);
     };
 
-    const onExpand = () => {
-        console.log('Trigger Expand');
+    const onDelete = (id) => {
+        remove(id);
+    }
+
+    const onAdd = (_text = text, _idRoot = idRoot) => {
+        const data = {
+            name: _text,
+            paramId: _idRoot,
+        };
+        post(data);
+        handleCancel(); // Đóng Modal
+        setText(''); // reset text về rỗng
+        setIdRoot('-1');
     };
 
+    const handleText = (e) => {
+        setText(e.target.value);
+    };
 
-    // Dữ liệu fake để làm giao diện
-    const treeDataFake = [
-        {
-            title: <TitleTree name={'TRANG ĐIỂM'} showModalAdd={setIsModalVisible} />,
-            icon: <div style={{ fontSize: 20 }}>✯</div>,
-            key: '0-0',
-            children: [
-                { title:  <TitleTree name={'TRANG ĐIỂM MẶT'} showModalAdd={setIsModalVisible} />, key: '0-0-0', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title:  <TitleTree name={'TRANG ĐIỂM MÔI'} showModalAdd={setIsModalVisible} />, key: '0-0-1', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title:  <TitleTree name={'TRANG ĐIỂM MẮT '} showModalAdd={setIsModalVisible} />, key: '0-0-2', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title:  <TitleTree name={'CỌ TRANG ĐIỂM '} showModalAdd={setIsModalVisible} />, key: '0-0-4', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-            ],
-        },
-        {
-            title: <TitleTree name={'CHĂM SÓC DA'} showModalAdd={setIsModalVisible} />,
-            icon: <div style={{ fontSize: 20 }}>✯</div>,
-            key: '1-0',
-            children: [
-                { title: <TitleTree name={'LÀM SẠCH DA'} showModalAdd={setIsModalVisible} />, key: '1-1-0', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title: <TitleTree name={'MÁY RỬA MẶT'} showModalAdd={setIsModalVisible} />, key: '1-1-1', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title: <TitleTree name={'TRỊ MỤN'} showModalAdd={setIsModalVisible} />, key: '1-1-2', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-            ],
-        },
-        {
-            title: <TitleTree name={'NƯỚC HOA'} showModalAdd={setIsModalVisible} />,
-            icon: <div style={{ fontSize: 20 }}>✯</div>,
-            key: '2-0',
-            children: [
-                { title: <TitleTree name={'NƯỚC HOA NỮ'} showModalAdd={setIsModalVisible} />, key: '2-1-0', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title: <TitleTree name={'NƯỚC HOA NAM'} showModalAdd={setIsModalVisible} />, key: '2-1-1', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-                { title: <TitleTree name={'XỊT THƠM BODY'} showModalAdd={setIsModalVisible} />, key: '2-1-2', icon: <div style={{ fontSize: 20 }}>✯</div>, isLeaf: true },
-            ],
-        },
-        {
-            title: <TitleTree name={'CHĂM SÓC TÓC'} showModalAdd={setIsModalVisible} />,
-            icon: <div style={{ fontSize: 20 }}>✯</div>,
-            key: '3-0',
-            children: [],
-        },
-        {
-            title: <TitleTree name={'PHỤ KIỆN TRANG ĐIỂM'} showModalAdd={setIsModalVisible} />,
-            icon: <div style={{ fontSize: 20 }}>✯</div>,
-            key: '4-0',
-            children: [],
-        },
-    ];
+    const handlePressEnter = (e) => {
+        onAdd(e.target.value, idRoot);
+    }
 
     const setChildren = (arrayObj, id, key) => {
         const children = [];
@@ -93,7 +67,7 @@ function DanhMuc(props) {
             if (itemChildren.paramId === id) {
                 const _key = `${key}-${dem}`;
                 children.push({
-                    title: <TitleTree name={itemChildren.name} />,
+                    title: <TitleTree name={itemChildren.name} showModalAdd={showModal} id={itemChildren._id} onDelete={onDelete} onEdit={put} />,
                     key: _key,
                     icon: <div style={{ fontSize: 20 }}>✯</div>,
                     children: setChildren(arrayObj, itemChildren._id, _key.toString()),
@@ -110,7 +84,7 @@ function DanhMuc(props) {
         arrayObj.map((item, i) => {
             if (item.paramId === '-1') {
                 newTreeData.push({
-                    title: <TitleTree name={item.name} />,
+                    title: <TitleTree name={item.name} showModalAdd={showModal} id={item._id} onDelete={onDelete} onEdit={put} />,
                     key: `${dem}`,
                     icon: <div style={{ fontSize: 20 }}>✯</div>,
                     children: setChildren(arrayObj, item._id, `${dem}`),
@@ -121,21 +95,10 @@ function DanhMuc(props) {
         setTreeData(newTreeData);
     };
 
-    const info = (content) => {
-        message.success(content);
-    };
-
-    const onAdd = () => {
-        info('Thêm thành công');
-        handleCancel()
-    }
-
-    React.useEffect(() => {
-        getList();
-    }, []);
     React.useEffect(() => {
         updateTreeData();
     }, [catalog]);
+
     // JSX
     const AddModal = (
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
@@ -143,7 +106,7 @@ function DanhMuc(props) {
                 <span style={{ color: 'red' }}>Tên danh mục: </span>
             </div>
             <div>
-                <Input style={{ width: 200 }} />
+                <Input style={{ width: 200 }} value={text} onChange={handleText} onPressEnter={handlePressEnter} />
             </div>
             <div>
                 <Button type='primary' onClick={() => onAdd()} style={{ marginLeft: '5px', borderRadius: '20px' }}>
@@ -161,21 +124,29 @@ function DanhMuc(props) {
                 switcherIcon={<DownOutlined />}
                 defaultExpandedKeys={['0-0-0']}
                 onSelect={onSelect}
-                treeData={treeDataFake} // Dùng tạm để dụng giao diện
-                // treeData={treeData}
+                treeData={treeData}
+                // treeData={treeDataFake} // Dùng tạm để dụng giao diện
             />
-            <div style={{fontSize: 25, color: 'red'}} onClick={()=> setIsModalVisible(true)}><PlusCircleOutlined style={{cursor: 'pointer'}} /></div>
+            <div style={{ fontSize: 25, color: 'red' }} onClick={() => setIsModalVisible(true)}>
+                <PlusCircleOutlined style={{ cursor: 'pointer' }} />
+            </div>
             <Modal title={AddModal} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} closeIcon={false} wrapClassName={'tree_controller_modal_edit'} />
         </div>
     );
 }
 DanhMuc.propTypes = {
     getList: PropTypes.func,
+    post: PropTypes.func,
+    remove: PropTypes.func,
+    put: PropTypes.func,
     catalog: PropTypes.object,
 };
 
 DanhMuc.defaultProps = {
     getList: () => {},
+    post: () => {},
+    remove: () => {},
+    put: () => {},
     catalog: {},
 };
 

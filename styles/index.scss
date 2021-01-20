@@ -1,5 +1,5 @@
 .mobile_controller_page {
-    font-family: "Times New Roman";
+    font-family: 'Times New Roman';
 }
 .mobile_header {
     background-color: #dd3333;
@@ -23,9 +23,11 @@
 .mobile_title_header {
     font-size: 24px;
     font-weight: bold;
-    font-family: Permanent Marker,cursive;
+    font-family: Permanent Marker, cursive;
 }
-.mobile_controller_header .ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+.mobile_controller_header .ant-badge-count,
+.ant-badge-dot,
+.ant-badge .ant-scroll-number-custom-component {
     background: orange;
     border-radius: 25px;
 }
@@ -54,7 +56,7 @@
     width: 100%;
     padding: 0px;
 }
-[type="search"] {
+[type='search'] {
     appearance: textfield;
     outline-offset: -2px;
 }
@@ -62,7 +64,7 @@
     margin-top: 50px;
 }
 .mobile_slider_header img {
-        border-radius: 15px;
+    border-radius: 15px;
 }
 .mobile_menu_category {
     display: flex;
@@ -79,10 +81,10 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
-    font-family:  Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 .mobile_menu_category_item img {
-        border-radius: 15px;
+    border-radius: 15px;
 }
 .mobile_content {
     padding-left: 12px;
@@ -116,26 +118,31 @@
 }
 
 .btn-shake:hover {
-    animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
 }
 @keyframes shake {
-    10%, 90% {
+    10%,
+    90% {
         transform: translate3d(-1px, 0, 0);
     }
 
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
     }
 
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
     }
 
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
     }
 }
 .tox-notification .tox-notification--in .tox-notification--warning {
@@ -155,7 +162,6 @@
 }
 .tree_controller_modal_edit .ant-modal-content {
     border-radius: 20px;
-
 }
 .tree_controller_modal_edit .ant-modal-header {
     border-radius: 20px;
@@ -182,6 +188,12 @@
     border-radius: 20px;
 }
 .modal_controller .ant-modal-header {
-     border-radius: 20px;
-     border-bottom: unset;
- }
+    border-radius: 20px;
+    border-bottom: unset;
+}
+.title_modal {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}

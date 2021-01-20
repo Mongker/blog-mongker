@@ -11,14 +11,13 @@
 import { connect } from 'react-redux';
 
 // action
-import { getList } from 'redux/actions/shopmypham/catalogAction';
+// import { getList } from 'redux/actions/shopmypham/catalogAction';
 
 // components
 import DanhMuc from './DanhMuc';
 import typeAction from 'redux/actions/typeAction';
 
 const mapStateToProps = (store) => {
-    console.log('store: ', store);
     const catalog = store.Catalog;
     return {
         catalog,
@@ -26,10 +25,9 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getList: () => {
-        debugger; // MongLV
-        return dispatch({type: typeAction.SHOP_MY_PHAM.CALL_GET_LIST_CATALOG , payload: {}});
-    },
+    post: (data) => dispatch({type: typeAction.SHOP_MY_PHAM.CATALOG_POST , payload: {data: data}}),
+    remove: (id) => dispatch({type: typeAction.SHOP_MY_PHAM.CATALOG_DELETE , payload: {id: id}}),
+    put: (id, data) => dispatch({type: typeAction.SHOP_MY_PHAM.CATALOG_PUT , payload: {id: id, data: data}}),
 });
 
 const DanhMucContainer = connect(mapStateToProps, mapDispatchToProps)(DanhMuc);

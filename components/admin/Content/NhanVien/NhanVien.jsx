@@ -8,62 +8,61 @@
  */
 
 import React from 'react';
-import TableNhanVien from './TableNhanVien/TableNhanVien';
 import { Button, Modal } from 'antd';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function NhanVien() {
-    const data = [
-        {
-            name: 'Vương Văn Ninh',
-            phone: '0123456788',
-            email: 'NinhVV1@gmail.com',
-            chuc_vu: 'Nhân viên',
-        },
-        {
-            name: 'Đào Văn Thắng',
-            phone: '0394111111',
-            email: 'NoNe@gmail.com',
-            chuc_vu: 'Nhân viên',
-        },
-        {
-            name: 'Nguyễn Thị Ánh',
-            phone: '0999999999',
-            email: 'AnhNN@gmail.com',
-            chuc_vu: 'Nhân viên',
-        },
-        {
-            name: 'Đào Thị Thanh Mai',
-            phone: '0394966969',
-            email: 'DTTMai@gmail.com',
-            chuc_vu: 'Quản lý',
-        },
-        {
-            name: 'Trần Văn Cao',
-            phone: '0388888999',
-            email: 'Caogia@gmail.com',
-            chuc_vu: 'Nhân viên',
-        },
-        {
-            name: 'Lưu Thị Ngát',
-            phone: '0999999998',
-            email: 'NgatThi12@gmail.com',
-            chuc_vu: 'Nhân viên',
-        },
-    ]
+
+import TableNhanVien from './TableNhanVien/TableNhanVien';
+import useWindowSize from '../../../hooks/useWindowSize';
+import ContentModal from './ContentModal/ContentModal';
+
+// const
+const stylesButton = {borderRadius: '20px', color: 'red',  fontWeight: 'bold', backgroundColor: 'pink', marginLeft: '94%', marginTop: '10px'};
+function NhanVien({post}) {
+    const {width} = useWindowSize();
+    const [isModalVisibleAdd, setIsModalVisibleAdd] = React.useState(false);
+
+    const showModal = () => {
+        setIsModalVisibleAdd(true);
+    }
+
+    const handleOk = () => {
+        setIsModalVisibleAdd(false);
+    }
+
+    const handleCancel = () => {
+        setIsModalVisibleAdd(false);
+    };
+    // JSX
+    const TitleAdd = (<div className={'title_modal'}>Thêm nhân viên</div>);
+    const propsAdd = {
+        title: TitleAdd,
+        visible: isModalVisibleAdd,
+        handleOk: handleOk,
+        handleCancel: handleCancel,
+        post: post,
+        wrapClassName: 'modal_controller',
+    }
     return(
         <React.Fragment>
-            <TableNhanVien data={data} />
-            <Button style={{borderRadius: '20px', color: 'red',  fontWeight: 'bold', backgroundColor: 'pink', marginLeft: '94%', marginTop: '10px'}}>Thêm</Button>
-            <Modal>
-
-            </Modal>
+            <TableNhanVien />
+            <Button
+                onClick={showModal}
+                style={stylesButton}
+            >
+                Thêm
+            </Button>
+            <ContentModal {...propsAdd} />
         </React.Fragment>
     );
 }
 
-NhanVien.propTypes = {};
+NhanVien.propTypes = {
+    post: PropTypes.func,
+};
 
-NhanVien.defaultProps = {};
+NhanVien.defaultProps = {
+    post: () => {},
+};
 
 export default NhanVien;

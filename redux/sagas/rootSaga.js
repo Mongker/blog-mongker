@@ -10,9 +10,11 @@
 import { all } from 'redux-saga/effects';
 
 // watch saga
-import { watcherCallListCatalog } from './shopmypham/catalogSaga';
+import { watcherCallListCatalog, watcherCallPostCatalog, watcherCallDeleteCatalog, watcherCallPutCatalog } from './shopmypham/catalogSaga';
+import { watcherGetListProduct, watcherCallPostProduct, watcherCallDeleteProduct, watcherPutProduct } from './shopmypham/productSaga';
+import { watcherCallPostAdmin } from './shopmypham/adminSaga';
 
 // saga
 export default function* rootSaga() {
-    yield all([watcherCallListCatalog()]);
+    yield all([watcherCallListCatalog(), watcherCallPostCatalog(), watcherCallDeleteCatalog(), watcherCallPutCatalog(), watcherGetListProduct(), watcherCallPostProduct(), watcherCallDeleteProduct(), watcherPutProduct(), watcherCallPostAdmin()]);
 }

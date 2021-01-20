@@ -73,7 +73,6 @@ function DonDatHang() {
     };
     // JSX
     const Detail = (<div style={stylesTitle}>Chi tiết đơn hàng</div>);
-
     return(
         <React.Fragment>
             <TableDonDatHang data={data} showModalDetail={setIsModalVisibleDetail} />

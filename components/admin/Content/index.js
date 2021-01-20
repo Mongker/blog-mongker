@@ -20,34 +20,38 @@ import Home from './Home/TrangChu';
 import SanPhamContainer from './SanPham/SanPhamContainer';
 import DonDatHangContainer from './DonDatHang/DonDatHangContainer';
 import KhanhHang from './KhanhHang/KhanhHang';
-import NhanVien from './NhanVien/NhanVien';
+import NhanVienContainer from './NhanVien/NhanVienContainer';
 
 function ContentView(props) {
-    const { checkKey, objectKey } = props;
+    const { checkKey, objectKey, getListCategory, getListProduct } = props;
     let componentContent;
     switch (checkKey) {
-            case objectKey.DANH_MUC:
-                componentContent = <DanhMucContaier />;
-                break;
-            case objectKey.HOME:
-                componentContent = <Home />;
-                break;
-            case objectKey.SAN_PHAM:
-                componentContent = <SanPhamContainer />;
-                break;
-            case objectKey.DON_DAT_HANG:
-                componentContent = <DonDatHangContainer />;
-                break;
-            case objectKey.KHACH_HANG:
-                componentContent = <KhanhHang />;
-                break;
-            case objectKey.NHAN_VIEN:
-                componentContent = <NhanVien />;
-                break;
-            default:
-            // code block
-        }
+        case objectKey.DANH_MUC:
+            componentContent = <DanhMucContaier />;
+            break;
+        case objectKey.HOME:
+            componentContent = <Home />;
+            break;
+        case objectKey.SAN_PHAM:
+            componentContent = <SanPhamContainer />;
+            break;
+        case objectKey.DON_DAT_HANG:
+            componentContent = <DonDatHangContainer />;
+            break;
+        case objectKey.KHACH_HANG:
+            componentContent = <KhanhHang />;
+            break;
+        case objectKey.NHAN_VIEN:
+            componentContent = <NhanVienContainer />;
+            break;
+        default:
+        // code block
+    }
 
+    React.useEffect(() => {
+        getListCategory();
+        getListProduct()
+    }, []);
     return (
         <div>
             <Breadcrumb style={{ margin: '16px 0' }}>

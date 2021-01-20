@@ -12,7 +12,7 @@ import React from 'react';
 import { Layout } from 'antd';
 // jsx
 import HeaderView from './Header';
-import ContentView from './Content';
+import ContentContainer from './Content/ContentContainer';
 import FooterView from './Footer';
 import MenuView from './Menu/MenuView';
 
@@ -38,6 +38,7 @@ function Admin() {
         console.log(collapsed);
         setCollapsed(collapsed);
     };
+
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
@@ -49,7 +50,7 @@ function Admin() {
                     <HeaderView checkKey={checkKey} />
                 </Header>
                 <Content style={{ margin: '0 16px' }}>
-                    <ContentView checkKey={checkKey} objectKey={objectKey} />
+                    <ContentContainer checkKey={checkKey} objectKey={objectKey} />
                 </Content>
                 <Footer style={{ textAlign: 'center', backgroundColor: '#d9d7d7' }}>
                     <FooterView checkKey={checkKey} />

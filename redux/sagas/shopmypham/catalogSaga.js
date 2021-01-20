@@ -13,15 +13,43 @@ import typeAction from '../../actions/typeAction';
 
 // api
 import { getListCatalog_API } from '../../api/catalog/getList';
-// import { postCatalog } from 'src/api/catalog/post';
-// import { putCatalog } from 'src/api/catalog/put';
-// import { deleteCatalog } from 'src/api/catalog/delete';
+import { postCatalog } from '../../api/catalog/post';
+import { putCatalog } from '../../api/catalog/put';
+import { deleteCatalog } from '../../api/catalog/delete';
 
 // -------------------------------------- watcher Action --------------------------------------/
 export function* watcherCallListCatalog() {
     while (true) {
         yield take(typeAction.SHOP_MY_PHAM.CALL_GET_LIST_CATALOG);
         debugger; // MongLV
+        yield call(doCallListCatalog);
+    }
+}
+export function* watcherCallPostCatalog() {
+    while (true) {
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.CATALOG_POST);
+        const {payload} = takeAction;
+        const {data} = payload;
+        yield postCatalog(data);
+        yield call(doCallListCatalog);
+    }
+}
+export function * watcherCallDeleteCatalog() {
+    while (true) {
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.CATALOG_DELETE);
+        const {payload} = takeAction;
+        const {id} = payload;
+        yield deleteCatalog(id);
+        yield call(doCallListCatalog);
+    }
+}
+
+export function* watcherCallPutCatalog() {
+    while (true) {
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.CATALOG_PUT);
+        const {payload} = takeAction;
+        const {id, data} = payload;
+        yield putCatalog(id, data);
         yield call(doCallListCatalog);
     }
 }
