@@ -28,7 +28,8 @@ function SelectDanhMuc({onChange, getList, catalog, value}) {
         >
             {OptionsValue.length > 0 && OptionsValue.map(item => (
                 <Select.Option key={item._id} value={item._id}>
-                    {item.paramId === '-1' ? item.name : `${catalog[item.paramId].name}/${item.name}`}
+                    {/*{item.paramId === '-1' ? item.name : `${catalog[item.paramId].name}/${item.name}`}*/}
+                    {item.name}
                 </Select.Option>
             ))}
         </Select>

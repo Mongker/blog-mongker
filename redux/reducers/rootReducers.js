@@ -13,6 +13,7 @@ import Catalog from './shopmypham/catalogReducer';
 import WindowSize from './shopmypham/windowSizeReducer';
 import Product from 'redux/reducers/shopmypham/producReducer';
 import Admin from 'redux/reducers/shopmypham/adminReducer';
+import User from 'redux/reducers/shopmypham/userReducer';
 
 const rootReducer = combineReducers({
     Counts: Counts,
@@ -20,5 +21,6 @@ const rootReducer = combineReducers({
     WindowSize: WindowSize,
     Product: Product,
     Admin: Admin,
+    User: User,
 });
 export default rootReducer;

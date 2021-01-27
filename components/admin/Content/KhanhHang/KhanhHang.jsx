@@ -11,7 +11,7 @@ import React from 'react';
 import TableKhanhHang from './TableKhanhHang/TableKhanhHang';
 // import PropTypes from 'prop-types';
 
-function KhanhHang() {
+function KhanhHang({getList, user}) {
     const data = [
         {
             name: 'Dao Thi Thanh Mai',
@@ -49,9 +49,12 @@ function KhanhHang() {
             dia_chi: 'Thanh Xuân, Hà Nội',
         },
     ];
+    React.useEffect(() => {
+        getList();
+    }, []);
     return(
         <React.Fragment>
-            <TableKhanhHang data={data} />
+            <TableKhanhHang data={Object.values(user)} />
         </React.Fragment>
     );
 }

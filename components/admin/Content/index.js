@@ -19,7 +19,7 @@ import DanhMucContaier from './DanhMuc/DanhMucContainer';
 import Home from './Home/TrangChu';
 import SanPhamContainer from './SanPham/SanPhamContainer';
 import DonDatHangContainer from './DonDatHang/DonDatHangContainer';
-import KhanhHang from './KhanhHang/KhanhHang';
+import KhanhHangContainer from './KhanhHang/KhanhHangContainer';
 import NhanVienContainer from './NhanVien/NhanVienContainer';
 
 function ContentView(props) {
@@ -39,7 +39,7 @@ function ContentView(props) {
             componentContent = <DonDatHangContainer />;
             break;
         case objectKey.KHACH_HANG:
-            componentContent = <KhanhHang />;
+            componentContent = <KhanhHangContainer />;
             break;
         case objectKey.NHAN_VIEN:
             componentContent = <NhanVienContainer />;

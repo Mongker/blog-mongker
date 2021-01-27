@@ -1,16 +1,19 @@
 /**
  * Copyright 2020 present, Đào Thị Thanh Mai.
  * All rights reserved.
- * @author Mai on 14/01/2021
+ * @author Mai on 20/01/2021
  * @email: sukhacbiet1199@gmail.com
  * @student_code: 68DCHT25114
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
 
-// import thu vien
-import { Form, Input, Button, Checkbox, Layout } from 'antd';
-// import Image from 'next/image';
-import style from '../components/admin/styles/login.module.css';
+import React from 'react';
+import { Button, Checkbox, Form, Input, Layout } from 'antd';
+import { useRouter } from 'next/router'
+
+// style
+import style from '../styles/login.module.css';
+// import PropTypes from 'prop-types';
 
 const layout = {
     labelCol: {
@@ -26,15 +29,28 @@ const tailLayout = {
         span: 16,
     },
 };
-function Login() {
+function Login({login}) {
+    const router = useRouter()
+
     const onFinish = (values) => {
         console.log('Success:', values);
+        login(values);
+        if(localStorage.getItem('id_admin')){
+            router.push('/admin')
+        }
     };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    return (
+
+    React.useEffect(() => {
+        if(localStorage.getItem('id_admin')){
+            router.push('/admin')
+        }
+    });
+
+    return(
         <Layout style={{ minHeight: '100vh' }}>
             <Layout className={style.site_layout}>
                 <div className={style.container}>
@@ -54,8 +70,8 @@ function Login() {
                         >
                             <div className={style.formItem}>
                                 <Form.Item
-                                    label='Username'
-                                    name='username'
+                                    label='Email'
+                                    name='email'
                                     rules={[
                                         {
                                             required: true,
@@ -96,4 +112,9 @@ function Login() {
         </Layout>
     );
 }
+
+Login.propTypes = {};
+
+Login.defaultProps = {};
+
 export default Login;

@@ -21,21 +21,22 @@ import {getLoginAdmin} from '../../api/admin/login';
 // import {getAdminID} from '../../admin/getAdminID';
 
 // -------------------------------------- watcher Action --------------------------------------/
-// export function* watcherCallListAdmin() {
-//     while (true) {
-//         yield take(ADMIN.CALL_GET_LIST);
-//         yield call(doCallListAdmin);
-//     }
-// }
-//
-// export function* watcherCallDeleteAdmin() {
-//     while (true) {
-//         const takeAction = yield take(ADMIN.CALL_DELETE);
-//         const {payload} = takeAction;
-//         yield deleteAdmin(payload);
-//         yield call(doCallListAdmin);
-//     }
-// }
+export function* watcherCallListAdmin() {
+    while (true) {
+        yield take(typeAction.SHOP_MY_PHAM.ADMIN_CALL_GET);
+        yield call(doCallListAdmin);
+    }
+}
+
+export function* watcherCallDeleteAdmin() {
+    while (true) {
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_DELETE);
+        const {payload} = takeAction;
+        console.log('payload', payload);
+        yield deleteAdmin(payload.id);
+        yield call(doCallListAdmin);
+    }
+}
 export function* watcherCallPostAdmin() {
     while (true) {
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_POST);
@@ -44,29 +45,45 @@ export function* watcherCallPostAdmin() {
         yield call(doCallListAdmin);
     }
 }
-// export function* watcherCallUpdateAdmin() {
-//     while (true) {
-//         const takeAction = yield take(ADMIN.CALL_PUT);
-//         const {payload} = takeAction;
-//         yield putAdmin(payload._id, payload);
-//         yield call(doCallListAdmin);
-//     }
-// }
-// export function* watcherLoginAdmin() {
-//     while (true) {
-//         const takeAction = yield take(ADMIN.LOGIN);
-//         const {payload} = takeAction;
-//         // const payload = takeAction.payload,
-//         // payload.data = { email : '?', passwold: '?'}
-//         const dataLogin = yield getLoginAdmin(payload.data);
-//         // dataLogin = {...} => Object.keys(dataLogin) biến thành 1 mảng để đồ dài của mảng
-//         if(dataLogin && Object.keys(dataLogin).length > 1) {
-//             localStorage.setItem('token_admin', dataLogin.password);
-//             localStorage.setItem('id_admin', dataLogin.id_admin);
-//             localStorage.setItem('email_admin', dataLogin.email);
-//         }
-//     }
-// }
+export function* watcherCallUpdateAdmin() {
+    while (true) {
+        debugger; // MongLV
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_PUT);
+        debugger; // MongLV
+        const {payload} = takeAction;
+        yield putAdmin(payload.id, payload.data);
+        yield call(doCallListAdmin);
+        if(payload.id === localStorage.getItem('id_admin')) {
+            debugger; // MongLV
+            yield put({type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN})
+        }
+    }
+}
+export function* watcherLoginAdmin() {
+    while (true) {
+        const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_LOGIN);
+        const {payload} = takeAction;
+        // const payload = takeAction.payload,
+        // payload.data = { email : '?', passwold: '?'}
+        const dataLogin = yield getLoginAdmin(payload.data);
+        // dataLogin = {...} => Object.keys(dataLogin) biến thành 1 mảng để đồ dài của mảng
+        localStorage.removeItem('token_admin');
+        localStorage.removeItem('id_admin');
+        localStorage.removeItem('email_admin');
+        localStorage.removeItem('avatar_admin');
+        localStorage.removeItem('name_admin');
+        localStorage.removeItem('position_admin');
+        if(dataLogin && Object.keys(dataLogin).length > 1) {
+            console.log('dataLogin', dataLogin);
+            localStorage.setItem('token_admin', dataLogin.password);
+            localStorage.setItem('id_admin', dataLogin.id_admin);
+            localStorage.setItem('email_admin', dataLogin.email);
+            localStorage.setItem('avatar_admin', dataLogin.avatar);
+            localStorage.setItem('name_admin', dataLogin.name);
+            localStorage.setItem('position_admin', dataLogin.position);
+        }
+    }
+}
 // export function* watcherGetAdminId() {
 //     while (true) {
 //         const takeAction = yield take(ADMIN.GET_ADMIN);
@@ -79,5 +96,6 @@ export function* watcherCallPostAdmin() {
 // -------------------------------------- do Saga ---------------------------------------/
 export function* doCallListAdmin() {
     const admin = yield getListAdmin_API();
+    debugger; // MongLV
     yield put({type: typeAction.SHOP_MY_PHAM.ADMIN_GET, admin});
 }

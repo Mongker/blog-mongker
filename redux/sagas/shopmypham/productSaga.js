@@ -54,9 +54,7 @@ export function* watcherCallPostProduct() {
 export function * watcherCallDeleteProduct() {
     while (true) {
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.PRODUCT_DELETE);
-        debugger; // MongLV
         const {payload} = takeAction;
-        debugger; // MongLV
         yield deleteProduct(payload.id);
         yield call(doCallListProduct);
     }

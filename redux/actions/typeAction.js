@@ -27,6 +27,9 @@ const typeAction = {
         ADMIN_GET: 'ADMIN_GET',
         ADMIN_DELETE: 'ADMIN_DELETE',
         ADMIN_PUT: 'ADMIN_PUT',
+        ADMIN_LOGIN: 'ADMIN_LOGIN',
+        USER_GET: 'USER_GET',
+        USER_CALL_GET: 'USER_CALL_GET'
     },
 };
 

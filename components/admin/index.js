@@ -10,6 +10,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Layout } from 'antd';
+import { useRouter } from 'next/router'
+
 // jsx
 import HeaderView from './Header';
 import ContentContainer from './Content/ContentContainer';
@@ -33,11 +35,23 @@ const objectKey = {
 };
 function Admin() {
     const [collapsed, setCollapsed] = React.useState(false);
+    const router = useRouter();
     const [checkKey, setCheckKey] = React.useState(objectKey.HOME);
     const onCollapse = (collapsed) => {
         console.log(collapsed);
         setCollapsed(collapsed);
     };
+
+    React.useEffect(() => {
+        if(!localStorage.getItem('id_admin')){
+            console.log('xx');
+            router.push('/login_admin')
+        }
+        if(checkKey===objectKey.LOGOUT) {
+            localStorage.removeItem('id_admin');
+            router.push('/login_admin')
+        }
+    });
 
     return (
         <Layout style={{ minHeight: '100vh' }}>

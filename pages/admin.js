@@ -7,8 +7,10 @@
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
 import Admin from '../components/admin';
+import React from 'react';
 
 function admin() {
+
     return <Admin />;
 }
 export default admin;

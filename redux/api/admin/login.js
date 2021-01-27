@@ -7,14 +7,15 @@
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
 import axios from 'axios';
-import {URL_API} from '../config';
-import {message} from "antd";
+import { URL_API } from '../config';
+import { message } from 'antd';
 
 export function getLoginAdmin(data) {
     try {
-        return axios.post(`${URL_API.local}admin/login`, data)
-            .then(res => res.data)
-            .catch(error => message.error('Tài khoản hoặc mật khẩu không đúng'));
+        return axios
+            .post(`${URL_API.local}admin/login`, data)
+            .then((res) => res.data)
+            .catch((error) => message.error('Tài khoản hoặc mật khẩu không đúng hoặc '+error));
     } catch (e) {
         message.error(e);
     }

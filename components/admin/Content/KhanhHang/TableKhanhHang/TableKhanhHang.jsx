@@ -9,7 +9,7 @@
 
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { ContainerOutlined, CloseOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { ContainerOutlined, CloseOutlined, EditOutlined, DeleteOutlined, MenuOutlined } from '@ant-design/icons';
 // styles
 import styles from '../../SanPham/styles/index.module.css';
 import useWindowSize from '../../../../hooks/useWindowSize';
@@ -35,10 +35,11 @@ function TableKhanhHang({ data = [] }) {
                     <div style={{ width: 200, fontWeight: 'bold' }}>{item.name}</div>
                     <div style={{ width: 80 }}>{item.phone}</div>
                     <div style={{ width: 100 }}>{item.email}</div>
-                    <div style={{ width: 200 }}>{item.dia_chi}</div>
+                    <div style={{ width: 200 }}>{item.address}</div>
                     <div style = {{width: 75, display: 'flex', justifyContent: 'space-around'}}>
-                        <EditOutlined style={{color: '#8285d2', cursor: 'pointer'}}/>
-                        <DeleteOutlined style={{color: 'red', cursor: 'pointer'}}/>
+                        <MenuOutlined style={{color: '#8285d2', cursor: 'pointer'}}/>
+                        {/*<MenuOutlined />*/}
+                        {/*<DeleteOutlined style={{color: 'red', cursor: 'pointer'}}/>*/}
                     </div>
                 </div>
             ))}

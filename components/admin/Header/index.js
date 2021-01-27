@@ -11,9 +11,20 @@ import React from 'react';
 import { MenuOutlined, SearchOutlined, BellOutlined, MailOutlined } from '@ant-design/icons';
 import styles from '../styles/header.module.css';
 import { Avatar } from 'antd';
+import { URL_API } from 'redux/api/config';
+import ModalEditInfoContainer from './ModalEditInfo/ModalEditInfoContainer';
 
 function HeaderView(props) {
     const { checkKey } = props;
+    const [visible, setVisible] = React.useState(false);
+    const [avatar, setAvatar] = React.useState('');
+    const [name, setName] = React.useState('');
+    React.useEffect(()=> {
+        const _avatar = localStorage && localStorage.getItem('avatar_admin') ? `${URL_API.img}${localStorage.getItem('avatar_admin')}` : 'https://scr.vn/wp-content/uploads/2020/07/Avatar-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-n%E1%BB%AF-c%C3%B3-m%C3%A0u.jpg';
+        const _name = localStorage && localStorage.getItem('name_admin') ? localStorage.getItem('name_admin') : 'Đăng nhập'
+        setAvatar(_avatar);
+        setName(_name);
+    }, [])
     return (
         <div className={styles.header_container}>
             <div className={styles.header_left}>
@@ -31,11 +42,12 @@ function HeaderView(props) {
                 <div className={styles.email}>
                     <MailOutlined />
                 </div>
-                <div className={styles.logo}>
-                    <Avatar alt='Mountains' src={'https://scr.vn/wp-content/uploads/2020/07/Avatar-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-n%E1%BB%AF-c%C3%B3-m%C3%A0u.jpg'} width={30} height={30} />
-                    <span style={{ fontSize: '12px', fontWeight: 'bold', marginLeft: '5px' }}>Đào Thị Thanh Mai</span>
+                <div className={styles.logo} onClick={() => setVisible(true)}>
+                    <Avatar alt='Mountains' src={avatar} width={30} height={30} />
+                    <span style={{ fontSize: '12px', fontWeight: 'bold', marginLeft: '5px' }}>{name}</span>
                 </div>
             </div>
+            <ModalEditInfoContainer visible={visible} setVisible={setVisible} />
         </div>
     );
 }

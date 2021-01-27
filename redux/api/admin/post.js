@@ -23,7 +23,7 @@ export function postAdmin(data) {
                 if (result.message === 'SUCCESS') {
                     message.success('Thêm thành công');
                 } else {
-                    message.error('Lỗi truyền');
+                    message.error('Lỗi:' + result.message);
                 }
             })
             .catch((error) => message.error('Lỗi: ' + error));
