@@ -10,7 +10,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Layout } from 'antd';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 // jsx
 import HeaderView from './Header';
@@ -43,13 +43,13 @@ function Admin() {
     };
 
     React.useEffect(() => {
-        if(!localStorage.getItem('id_admin')){
+        if (!localStorage.getItem('id_admin')) {
             console.log('xx');
-            router.push('/login_admin')
+            router.push('/login_admin');
         }
-        if(checkKey===objectKey.LOGOUT) {
+        if (checkKey === objectKey.LOGOUT) {
             localStorage.removeItem('id_admin');
-            router.push('/login_admin')
+            router.push('/login_admin');
         }
     });
 

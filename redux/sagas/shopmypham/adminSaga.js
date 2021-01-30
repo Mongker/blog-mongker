@@ -13,11 +13,11 @@ import { call, put, take } from 'redux-saga/effects';
 import typeAction from '../../actions/typeAction';
 
 // api
-import {getListAdmin_API} from '../../api/admin/getList';
-import {deleteAdmin} from '../../api/admin/delete';
-import {putAdmin} from '../../api/admin/put';
-import {postAdmin} from '../../api/admin/post';
-import {getLoginAdmin} from '../../api/admin/login';
+import { getListAdmin_API } from '../../api/admin/getList';
+import { deleteAdmin } from '../../api/admin/delete';
+import { putAdmin } from '../../api/admin/put';
+import { postAdmin } from '../../api/admin/post';
+import { getLoginAdmin } from '../../api/admin/login';
 // import {getAdminID} from '../../admin/getAdminID';
 
 // -------------------------------------- watcher Action --------------------------------------/
@@ -31,7 +31,7 @@ export function* watcherCallListAdmin() {
 export function* watcherCallDeleteAdmin() {
     while (true) {
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_DELETE);
-        const {payload} = takeAction;
+        const { payload } = takeAction;
         console.log('payload', payload);
         yield deleteAdmin(payload.id);
         yield call(doCallListAdmin);
@@ -40,47 +40,40 @@ export function* watcherCallDeleteAdmin() {
 export function* watcherCallPostAdmin() {
     while (true) {
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_POST);
-        const {payload} = takeAction;
+        const { payload } = takeAction;
         yield postAdmin(payload.data);
         yield call(doCallListAdmin);
     }
 }
 export function* watcherCallUpdateAdmin() {
     while (true) {
-        debugger; // MongLV
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_PUT);
-        debugger; // MongLV
-        const {payload} = takeAction;
+        const { payload } = takeAction;
         yield putAdmin(payload.id, payload.data);
         yield call(doCallListAdmin);
-        if(payload.id === localStorage.getItem('id_admin')) {
-            debugger; // MongLV
-            yield put({type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN})
+        if (payload.id === localStorage.getItem('id_admin')) {
+            yield put({ type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN });
         }
     }
 }
 export function* watcherLoginAdmin() {
     while (true) {
         const takeAction = yield take(typeAction.SHOP_MY_PHAM.ADMIN_LOGIN);
-        const {payload} = takeAction;
-        // const payload = takeAction.payload,
-        // payload.data = { email : '?', passwold: '?'}
+        const { payload } = takeAction;
         const dataLogin = yield getLoginAdmin(payload.data);
-        // dataLogin = {...} => Object.keys(dataLogin) biến thành 1 mảng để đồ dài của mảng
         localStorage.removeItem('token_admin');
         localStorage.removeItem('id_admin');
         localStorage.removeItem('email_admin');
         localStorage.removeItem('avatar_admin');
-        localStorage.removeItem('name_admin');
-        localStorage.removeItem('position_admin');
-        if(dataLogin && Object.keys(dataLogin).length > 1) {
+        if (dataLogin && Object.keys(dataLogin).length > 1) {
             console.log('dataLogin', dataLogin);
             localStorage.setItem('token_admin', dataLogin.password);
             localStorage.setItem('id_admin', dataLogin.id_admin);
             localStorage.setItem('email_admin', dataLogin.email);
-            localStorage.setItem('avatar_admin', dataLogin.avatar);
-            localStorage.setItem('name_admin', dataLogin.name);
-            localStorage.setItem('position_admin', dataLogin.position);
+            if (dataLogin.message === 'SUCCESS') {
+                yield payload.funcCallBackSuccess();
+                yield put({ type: typeAction.SHOP_MY_PHAM.LOGIN_ADMIN, login: dataLogin });
+            }
         }
     }
 }
@@ -97,5 +90,5 @@ export function* watcherLoginAdmin() {
 export function* doCallListAdmin() {
     const admin = yield getListAdmin_API();
     debugger; // MongLV
-    yield put({type: typeAction.SHOP_MY_PHAM.ADMIN_GET, admin});
+    yield put({ type: typeAction.SHOP_MY_PHAM.ADMIN_GET, admin });
 }

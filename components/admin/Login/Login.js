@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { Button, Checkbox, Form, Input, Layout } from 'antd';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 // style
 import style from '../styles/login.module.css';
@@ -29,28 +29,28 @@ const tailLayout = {
         span: 16,
     },
 };
-function Login({login}) {
-    const router = useRouter()
-
+function Login({ login }) {
+    const router = useRouter();
+    const nextPage = () => {
+        router.push('/admin');
+    };
     const onFinish = (values) => {
-        console.log('Success:', values);
-        login(values);
-        if(localStorage.getItem('id_admin')){
-            router.push('/admin')
-        }
+        login(values, nextPage);
     };
 
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
+    const onFinishFailed = (errorInfo) => {};
 
     React.useEffect(() => {
-        if(localStorage.getItem('id_admin')){
-            router.push('/admin')
+        if (localStorage.getItem('id_admin')) {
+            const data = {
+                email: localStorage.getItem('email_admin'),
+                password: localStorage.getItem('token_admin'),
+            };
+            login(data, nextPage);
         }
-    });
+    }, []);
 
-    return(
+    return (
         <Layout style={{ minHeight: '100vh' }}>
             <Layout className={style.site_layout}>
                 <div className={style.container}>

@@ -29,7 +29,10 @@ const typeAction = {
         ADMIN_PUT: 'ADMIN_PUT',
         ADMIN_LOGIN: 'ADMIN_LOGIN',
         USER_GET: 'USER_GET',
-        USER_CALL_GET: 'USER_CALL_GET'
+        USER_CALL_GET: 'USER_CALL_GET',
+        LOGIN_ADMIN: 'LOGIN_ADMIN',
+        LOGIN_UPDATE: 'LOGIN_UPDATE',
+        LOGIN_REMOVE: 'LOGIN_REMOVE',
     },
 };
 

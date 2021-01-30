@@ -17,16 +17,15 @@ import typeAction from 'redux/actions/typeAction';
 const mapStateToProps = (state) => {
     const admin = state.Admin;
     return {
-        admin
-    }
+        admin,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getList: () => dispatch({type: typeAction.SHOP_MY_PHAM.ADMIN_CALL_GET}),
+    getList: () => dispatch({ type: typeAction.SHOP_MY_PHAM.ADMIN_CALL_GET }),
     put: (id, data) => {
-        debugger; // MongLV
-        dispatch({type: typeAction.SHOP_MY_PHAM.ADMIN_PUT, payload: {data: data, id: id}});
-    }
+        dispatch({ type: typeAction.SHOP_MY_PHAM.ADMIN_PUT, payload: { data: data, id: id } });
+    },
 });
 
 const ModalEditInfoContainer = connect(mapStateToProps, mapDispatchToProps)(ModalEditInfo);

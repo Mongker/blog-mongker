@@ -14,12 +14,12 @@ import typeAction from 'redux/actions/typeAction';
 // components
 import Login from './Login';
 
-const mapStateToProps = (state) => ({});
+// const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-    login: (data) => dispatch({type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN, payload: {data: data}})
+    login: (data, funcCallBackSuccess) => dispatch({ type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN, payload: { data: data, funcCallBackSuccess: funcCallBackSuccess } }),
 });
 
-const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);
+const LoginContainer = connect(null, mapDispatchToProps)(Login);
 
 export default LoginContainer;

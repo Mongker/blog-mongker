@@ -8,23 +8,39 @@
  */
 
 import React from 'react';
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
 import { MenuOutlined, SearchOutlined, BellOutlined, MailOutlined } from '@ant-design/icons';
-import styles from '../styles/header.module.css';
 import { Avatar } from 'antd';
 import { URL_API } from 'redux/api/config';
+
+// component
 import ModalEditInfoContainer from './ModalEditInfo/ModalEditInfoContainer';
 
-function HeaderView(props) {
-    const { checkKey } = props;
+// styles
+import styles from '../styles/header.module.css';
+import typeAction from 'redux/actions/typeAction';
+
+function HeaderView() {
+    const router = useRouter();
     const [visible, setVisible] = React.useState(false);
-    const [avatar, setAvatar] = React.useState('');
-    const [name, setName] = React.useState('');
-    React.useEffect(()=> {
-        const _avatar = localStorage && localStorage.getItem('avatar_admin') ? `${URL_API.img}${localStorage.getItem('avatar_admin')}` : 'https://scr.vn/wp-content/uploads/2020/07/Avatar-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-n%E1%BB%AF-c%C3%B3-m%C3%A0u.jpg';
-        const _name = localStorage && localStorage.getItem('name_admin') ? localStorage.getItem('name_admin') : 'Đăng nhập'
-        setAvatar(_avatar);
-        setName(_name);
-    }, [])
+    const nextPage = () => {
+        router.push('/admin');
+    };
+    const dataLogin = useSelector((state) => state.Login);
+    const dispatch = useDispatch();
+    const dispatchCheckLogin = (data, nextPage) => dispatch({ type: typeAction.SHOP_MY_PHAM.ADMIN_LOGIN, payload: { data: data, funcCallBackSuccess: nextPage } });
+
+    React.useEffect(() => {
+        if (localStorage.getItem('id_admin')) {
+            const data = {
+                email: localStorage.getItem('email_admin'),
+                password: localStorage.getItem('token_admin'),
+            };
+            dispatchCheckLogin(data, nextPage);
+        }
+    }, []);
+
     return (
         <div className={styles.header_container}>
             <div className={styles.header_left}>
@@ -43,8 +59,8 @@ function HeaderView(props) {
                     <MailOutlined />
                 </div>
                 <div className={styles.logo} onClick={() => setVisible(true)}>
-                    <Avatar alt='Mountains' src={avatar} width={30} height={30} />
-                    <span style={{ fontSize: '12px', fontWeight: 'bold', marginLeft: '5px' }}>{name}</span>
+                    <Avatar alt={dataLogin.name} src={`${URL_API.img}${dataLogin.avatar}`} width={30} height={30} />
+                    <span style={{ fontSize: '12px', fontWeight: 'bold', marginLeft: '5px' }}>{dataLogin.name}</span>
                 </div>
             </div>
             <ModalEditInfoContainer visible={visible} setVisible={setVisible} />
