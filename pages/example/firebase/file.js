@@ -6,3 +6,18 @@
  * @student_code: 68DCHT20091
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
+
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function FileUpload() {
+    return (
+        <div>mmmmm</div>
+    );
+}
+
+FileUpload.propTypes = {};
+
+FileUpload.defaultProps = {}
+
+export default FileUpload;
