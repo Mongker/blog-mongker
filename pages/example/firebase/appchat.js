@@ -131,4 +131,16 @@
 //     );
 // }
 //
-// export default App;
+// export default App
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function AppChat() {
+    return (
+        <div>xxxx</div>
+    );
+}
+AppChat.propTypes = {};
+AppChat.defaultProps = {}
+
+export default AppChat;
