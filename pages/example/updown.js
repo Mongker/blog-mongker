@@ -26,10 +26,10 @@ function getListProduct_API() {
 }
 
 export async function getStaticProps(content) {
-  const res = await getListProduct_API();
+  // const res = await getListProduct_API();
   return {
     props: {
-      product: res,
+      // product: res,
     },
   };
 }
