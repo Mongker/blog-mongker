@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 function FileUpload() {
     return (
-        <div>mmmmm</div>
+        <div>mmmmm  </div>
     );
 }
 
