@@ -8,16 +8,14 @@
  */
 
 import React from 'react';
-import {Button, Input} from 'antd';
-import { auth, db } from '../../config/firebase';
+import { Button, Input, message } from 'antd';
+import { auth, db } from '../../../config/firebase';
 function SignUp() {
-    const [data, setData] = React.useState(
-        {
-            name: '',
-            email: '',
-            password: '',
-        }
-    );
+    const [data, setData] = React.useState({
+        name: '',
+        email: '',
+        password: '',
+    });
 
     // Cách 1: Xử dụng tài khoản mật khẩu thường
     // const signUp = ({ name, email, password }) => {
@@ -42,10 +40,12 @@ function SignUp() {
             .doc(user.uid)
             .set(user)
             .then(() => {
-                console.log("Success")
+                console.log('Success');
+                message.success('Thêm thành công');
             })
             .catch((error) => {
-                console.log(error)
+                console.log(error);
+                message.warning('Thất bại');
             });
     };
     const signUp = ({ name, email, password }) => {
@@ -55,6 +55,7 @@ function SignUp() {
                 return createUser({ uid: response.user.uid, email, name });
             })
             .catch((error) => {
+                message.warning('Thất bại');
                 return { error };
             });
     };
@@ -63,11 +64,13 @@ function SignUp() {
             console.log(user);
         });
     };
-    return(
-        <div>
-            <Input placeholder={'name'} onChange={(e) => setData({...data, name: e.target.value})} />
-            <Input placeholder={'email'} onChange={(e) => setData({...data, email: e.target.value})} />
-            <Input placeholder={'password'} onChange={(e) => setData({...data, password: e.target.value})} />
+    const styleItem = { width: 200, marginBottom: 5 };
+    return (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <div style={{ textAlign: 'center', color: 'red', fontSize: 24, ...styleItem }}>SignUp</div>
+            <Input placeholder={'name'} onChange={(e) => setData({ ...data, name: e.target.value })} style={styleItem} />
+            <Input placeholder={'email'} onChange={(e) => setData({ ...data, email: e.target.value })} style={styleItem} />
+            <Input placeholder={'password'} onChange={(e) => setData({ ...data, password: e.target.value })} style={styleItem} />
             <Button onClick={onSubmit}>Ok</Button>
         </div>
     );

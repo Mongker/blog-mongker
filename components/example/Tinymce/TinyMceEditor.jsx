@@ -9,9 +9,9 @@
 
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // Thao khảo upload file tại đây: https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
-function TinyMceEditor() {
+function TinyMceEditor({ onSave, heightApp, widthApp }) {
     const [text, setText] = React.useState('');
     const [Img, setImg] = React.useState([]);
     const onChange = (e) => {
@@ -29,6 +29,9 @@ function TinyMceEditor() {
             widthApp: window.innerWidth,
         });
     }, []);
+    React.useEffect(() => {
+        onSave(text);
+    }, [text]);
     console.log('Img', Img);
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -36,7 +39,7 @@ function TinyMceEditor() {
                 apiKey='4k95hdk87th2mmwysccl9lvu2ap1ehtwjn1hd7qnkk4d6ziv'
                 initialValue={text}
                 init={{
-                    height: windowSize.heightApp,
+                    height: heightApp || windowSize.heightApp,
                     menubar: true,
                     plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
                     toolbar: 'undo redo | formatselect | bold italic backcolor | link image |\
@@ -92,8 +95,12 @@ function TinyMceEditor() {
     );
 }
 
-// TinyMceEditor.propTypes = {};
-//
-// TinyMceEditor.defaultProps = {};
+TinyMceEditor.propTypes = {
+    onSave: PropTypes.func,
+};
+
+TinyMceEditor.defaultProps = {
+    onSave: () => {},
+};
 
 export default TinyMceEditor;

@@ -15,7 +15,7 @@ function Index() {
     const data = {
         name: 'Blog Mongker',
         icon: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
-        title: 'Nơi chia sẽ kiến thức lập trình',
+        title: 'Blog Mongker nới chia sẽ kiến thức lập trình',
         url: 'https://mongker.cf/',
         image: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
         description: 'Website là nơi chia sẽ kiến thức lập trình theo góc nhìn của mình, mong những kiến thức của mình có thể giúp đỡ các bạn trong công cuộc kiến thiết bản thân của mình.',
