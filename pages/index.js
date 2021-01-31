@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import HeadView from '../components/HeadView';
+import MetaView from '../components/MetaView';
 import { Badge, BackTop } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 
@@ -16,10 +16,9 @@ function Index() {
             widthApp: window.innerWidth,
         });
     }, []);
-
     return (
         <div className={'controller_page'}>
-            <HeadView />
+            <MetaView />
             <div className={'mobile_header'}>
                 <div className={'mobile_controller_header'}>
                     <div className={'mobile_item_header'}>
@@ -74,6 +73,16 @@ function Index() {
                     <span className={'read_more'}>XEM THÊM</span>
                 </div>
                 <div className={'mobile_content_item'}>bla bla</div>
+                <iframe
+                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d885.093823405133!2d105.8456415!3d21.0059093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135adc53265507d%3A0x80c831e43a125264!2sSalon%20H%26T!5e1!3m2!1svi!2s!4v1612092072583!5m2!1svi!2s'
+                    width={windowSize.widthApp * 0.9}
+                    height='450'
+                    frameBorder='0'
+                    style={{ border: 0 }}
+                    allowFullScreen=''
+                    aria-hidden='false'
+                    tabIndex='0'
+                />
             </div>
             <BackTop />
         </div>
