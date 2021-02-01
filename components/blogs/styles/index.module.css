@@ -1,0 +1,31 @@
+.news_controller {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+.post_new_controller {
+    background-color: #eef0f1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+.post_title {
+    font-size: 30px;
+    font-weight: bold;
+    color: black !important;
+    text-align: center;
+}
+.post_new_edit {
+    border: 1px solid #9a9090 !important;
+    border-radius: 16px;
+    padding: 10px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}

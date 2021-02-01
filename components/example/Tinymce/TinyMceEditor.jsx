@@ -15,7 +15,6 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
     const [text, setText] = React.useState('');
     const [Img, setImg] = React.useState([]);
     const onChange = (e) => {
-        console.log(e.target.getContent());
         setText(e.target.getContent());
     };
     const [windowSize, setWindowSize] = React.useState({
@@ -32,7 +31,7 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
     React.useEffect(() => {
         onSave(text);
     }, [text]);
-    console.log('Img', Img);
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Editor
@@ -42,9 +41,11 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                     height: heightApp || windowSize.heightApp,
                     menubar: true,
                     plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo | formatselect | bold italic backcolor | link image |\
+                    toolbar: 'undo redo | formatselect | bold italic backcolor forecolor | link image |\
                     alignleft aligncenter alignright alignjustify | \
-                    bullist numlist outdent indent | removeformat | help',
+                    bullist numlist outdent indent | code table | removeformat | fullscreen  preview save print help',
+                    // toolbar:
+                    //     'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
                     image_title: true,
                     automatic_uploads: true,
                     file_picker_types: 'image',
