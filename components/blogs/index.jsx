@@ -16,7 +16,7 @@ import useWindowSize from '../hooks/useWindowSize';
 // import PropTypes from 'prop-types';
 
 function Blogs() {
-    const { height } = useWindowSize();
+    const { height, width } = useWindowSize();
     const router = useRouter();
 
     const [data, setData] = React.useState({});
@@ -47,7 +47,7 @@ function Blogs() {
         };
     }, []);
     return (
-        <div className={styled.news_controller} style={{ height: height }}>
+        <div className={styled.news_controller} style={{ width: width }}>
             <Button onClick={nextPagePostNews} type={'primary'} style={{ position: 'absolute', borderRadius: 25, left: '90%', top: '15px' }}>
                 Đăng bài
             </Button>
@@ -55,7 +55,7 @@ function Blogs() {
                 Object.values(data).map((item) => (
                     <div className={styled.post_new_edit} style={{ backgroundColor: '#eef0f1', marginBottom: '10px' }}>
                         <div className={styled.post_title}>{item.title}</div>
-                        <div dangerouslySetInnerHTML={{ __html: item.note }} />
+                        <div className={styled.news_item} dangerouslySetInnerHTML={{ __html: item.note }} />
                     </div>
                 ))}
         </div>

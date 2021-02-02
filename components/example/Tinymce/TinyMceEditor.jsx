@@ -41,7 +41,7 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                     height: heightApp || windowSize.heightApp,
                     menubar: true,
                     plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo | formatselect | bold italic backcolor forecolor | link image |\
+                    toolbar: 'formatselect | bold italic backcolor forecolor | link image |\
                     alignleft aligncenter alignright alignjustify | \
                     bullist numlist outdent indent | code table | removeformat | fullscreen  preview save print help',
                     // toolbar:
@@ -53,6 +53,7 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                         const input = document.createElement('input');
                         input.setAttribute('type', 'file');
                         input.setAttribute('accept', 'image/*');
+                        input.setAttribute('class', 'img_edit_news');
 
                         /*
                       Note: In modern browsers input[type="file"] is functional without

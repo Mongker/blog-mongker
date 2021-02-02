@@ -8,13 +8,11 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import styled from './styles/index.module.css';
 import TinyMceEditor from '../example/Tinymce/TinyMceEditor';
 import { Button, Input, message } from 'antd';
 import useWindowSize from '../hooks/useWindowSize';
-// import generateUUID from '../../util/generateUUID';
 import { db } from '../../config/firebase';
 import convertVietNamese from '../../util/convertVietNamese';
 const getMaxId = () => {
@@ -65,7 +63,7 @@ function PostNews() {
             <div className={styled.post_new_edit}>
                 <div className={styled.post_title}>Đăng bài viết mới</div>
                 <Input onChange={(e) => setTitle(e.target.value)} style={{ fontSize: '30px', textAlign: 'center', fontWeight: 'bold' }} placeholder={'Tiêu đề'} />
-                <TinyMceEditor heightApp={height * 0.5} onSave={setContent} />
+                <TinyMceEditor heightApp={height * 0.9} onSave={setContent} />
             </div>
             <Button onClick={handleClickAddData} type='primary' style={{ marginTop: 10, borderRadius: 10, backgroundColor: '#323ebe!important' }}>
                 Đăng bài

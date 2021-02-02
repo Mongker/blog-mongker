@@ -22,10 +22,27 @@
     text-align: center;
 }
 .post_new_edit {
-    border: 1px solid #9a9090 !important;
+    border: 1px solid #d9d5d5 !important;
     border-radius: 16px;
     padding: 10px;
-    width: 45%;
+    width: 90%;
     display: flex;
     flex-direction: column;
+}
+.post_news {
+    border: 1px solid #d0cdcd !important;
+    border-radius: 16px;
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.news_item {
+
+}
+.news_item img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    border-radius: 10px;
 }
