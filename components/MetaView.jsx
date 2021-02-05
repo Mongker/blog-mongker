@@ -17,6 +17,8 @@ function MetaView({ title, description, url, image, icon, name }) {
         <Head>
             <title>{title}</title>
             <meta name='robots' content='index, follow' />
+            <link rel='icon' href={icon} />
+            <meta name='author' content={name} />
             {/* SEO google, facebook */}
             <meta property='og:description' content={description} />
             <meta property='og:url' content={url} />
@@ -25,8 +27,6 @@ function MetaView({ title, description, url, image, icon, name }) {
             <meta property='og:image' content={image} />
             <meta property='og:image:width' content='600' />
             <meta property='og:image:height' content='315' />
-            <link rel='icon' href={icon} />
-            <meta name='author' content={name} />
         </Head>
     );
 }
@@ -43,7 +43,7 @@ MetaView.defaultProps = {
     icon: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Ffavicon.ico?alt=media&token=4fe2f924-62b4-44ee-8c18-5097a29adb2d',
     title: 'Mỹ phẩm Quỳnh Vân',
     url: 'https://mongker.cf/',
-    image: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Ffavicon.ico?alt=media&token=4fe2f924-62b4-44ee-8c18-5097a29adb2d',
+    image: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2F131338842_2800734746872256_7450134103626634553_n.jpg?alt=media&token=f7826ec4-d40b-4a57-bbf9-63fa98465e46',
     description: 'Mua mỹ phẩm chính hãng - Mỹ phẩm nhập trực tiếp từ Hàn Quốc, Mỹ, Pháp... Giá Tốt. Miễn phí giao hàng tận nơi với đơn hàng trên 700K. Miễn phí hoàn trả trong 7 ngày. Tích luỹ điểm thưởng khi mua hàng tại trên website...',
 };
 
