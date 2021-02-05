@@ -1,0 +1,40 @@
+/* For mobile phones: */
+.controller {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  margin-bottom: 5px;
+}
+.img {
+  background-color: #282c34;
+  width: 35%;
+  height: 90px;
+  border-radius: 10px;
+}
+.news {
+  background-color: red;
+  width: 65%;
+  height: 90px;
+}
+.title {
+  background-color: #141414;
+  height: 40%;
+}
+.description {
+  background-color: #141e6e;
+  height: 40%;
+}
+.author {
+  background-color: yellow;
+  height: 20%;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
+}

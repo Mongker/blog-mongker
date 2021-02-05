@@ -8,11 +8,14 @@
  */
 
 import React from 'react';
-import styled from './styles/index.module.css';
+import styled from './styles/index.module.scss';
 import { db } from '../../config/firebase';
 import { Button, message } from 'antd';
 import { useRouter } from 'next/router';
 import useWindowSize from '../hooks/useWindowSize';
+import ListNewsDetail from './News/ListNewsDetail/ListNewsDetail';
+import getNews from '../../util/getNews';
+import ListNewsReview from './News/ListNewsReview/ListNewsReview';
 // import PropTypes from 'prop-types';
 
 function Blogs() {
@@ -24,26 +27,10 @@ function Blogs() {
     const nextPagePostNews = () => {
         router.push('/blog/post');
     };
-    const getNews = async () =>
-        await db.collection('news').onSnapshot((querySnapshot) => {
-            let object = {};
-            if (querySnapshot.size) {
-                // we have something
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, ' => ', doc.data());
-                    object[doc.id] = doc.data();
-                });
-            } else {
-                // it's empty
-                message.warn('Loading');
-            }
-            setData(object);
-        });
     React.useEffect(() => {
-        getNews();
+        getNews(setData)
         return () => {
-            getNews();
+            getNews(setData({}));
         };
     }, []);
     return (
@@ -51,13 +38,7 @@ function Blogs() {
             <Button onClick={nextPagePostNews} type={'primary'} style={{ position: 'absolute', borderRadius: 25, left: '90%', top: '15px' }}>
                 Đăng bài
             </Button>
-            {Object.values(data).length > 0 &&
-                Object.values(data).map((item) => (
-                    <div className={styled.post_new_edit} style={{ backgroundColor: '#eef0f1', marginBottom: '10px' }}>
-                        <div className={styled.post_title}>{item.title}</div>
-                        <div className={styled.news_item} dangerouslySetInnerHTML={{ __html: item.note }} />
-                    </div>
-                ))}
+            <ListNewsReview data={data} />
         </div>
     );
 }

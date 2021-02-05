@@ -10,11 +10,18 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import PropTypes from 'prop-types';
+import $ from "jquery";
+
+// Util
+import generateUUID from '../../../util/generateUUID';
+import { firebase, storage } from '../../../config/firebase';
+
 // Thao khảo upload file tại đây: https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
-function TinyMceEditor({ onSave, heightApp, widthApp }) {
+function TinyMceEditor({ onSave, heightApp, setListPhotoNews, listPhotoNews, setDescriptionState }) {
     const [text, setText] = React.useState('');
-    const [Img, setImg] = React.useState([]);
     const onChange = (e) => {
+        const text = $(e.target.getBody().innerHTML).text().slice(0, 500);
+        setDescriptionState(text);
         setText(e.target.getContent());
     };
     const [windowSize, setWindowSize] = React.useState({
@@ -41,7 +48,7 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                     height: heightApp || windowSize.heightApp,
                     menubar: true,
                     plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'formatselect | bold italic backcolor forecolor | link image |\
+                    toolbar: 'undo redo | formatselect | bold italic backcolor forecolor | link image |\
                     alignleft aligncenter alignright alignjustify | \
                     bullist numlist outdent indent | code table | removeformat | fullscreen  preview save print help',
                     // toolbar:
@@ -53,7 +60,6 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                         const input = document.createElement('input');
                         input.setAttribute('type', 'file');
                         input.setAttribute('accept', 'image/*');
-                        input.setAttribute('class', 'img_edit_news');
 
                         /*
                       Note: In modern browsers input[type="file"] is functional without
@@ -64,7 +70,7 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                     */
                         input.onchange = function () {
                             const file = this.files[0];
-
+                            console.log('file', file);
                             const reader = new FileReader();
                             reader.onload = function () {
                                 /*
@@ -75,15 +81,41 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                                 const id = 'blobid' + new Date().getTime();
                                 const blobCache = tinymce.activeEditor.editorUpload.blobCache;
                                 const base64 = reader.result.split(',')[1];
-                                Img.push(base64);
-                                setImg(Img);
-                                const blobInfo = blobCache.create(id, file, base64);
-                                blobCache.add(blobInfo);
-                                console.log('blobInfo.blobUri(): ', blobInfo.blobUri());
-                                /* call the callback and populate the Title field with the file name */
-                                // cb(blobInfo.blobUri(), { title: file.name });
-                                cb(blobInfo.blobUri(), { title: file.name });
-                                console.log('file ', file);
+                                const nameId = generateUUID();
+                                let metadata = {
+                                    contentType: file.type,
+                                };
+                                const uploadTask = storage.ref().child(`images/${nameId}-${file.name}`).put(file, metadata);
+                                uploadTask.on('state_changed',
+                                    (snapshot) => {
+                                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                        console.log('Upload is ' + progress + '% done');
+                                        switch (snapshot.state) {
+                                            case firebase.storage.TaskState.PAUSED: // or 'paused'
+                                                console.log('Upload is paused');
+                                                break;
+                                            case firebase.storage.TaskState.RUNNING: // or 'running'
+                                                console.log('Upload is running');
+                                                break;
+                                        }
+                                    },
+                                    (error) => {
+                                        // Handle unsuccessful uploads
+                                    },
+                                    () => {
+                                        // Handle successful uploads on complete
+                                        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                                        uploadTask.snapshot.ref.getDownloadURL().then((_downloadURL) => {
+                                            const blobInfo = blobCache.create(id, file, base64);
+                                            blobCache.add(blobInfo);
+                                            console.log('blobInfo.blobUri(): ', blobInfo.blobUri());
+                                            /* call the callback and populate the Title field with the file name */
+                                            // cb(blobInfo.blobUri(), { title: file.name });
+                                            cb(_downloadURL, { title: file.name });
+                                            listPhotoNews.push(_downloadURL);
+                                            setListPhotoNews(listPhotoNews);
+                                        });
+                                    })
                             };
                             reader.readAsDataURL(file);
                         };
@@ -92,7 +124,6 @@ function TinyMceEditor({ onSave, heightApp, widthApp }) {
                 }}
                 onChange={onChange}
             />
-            {/* <div dangerouslySetInnerHTML={{ __html: text }} />*/}
         </div>
     );
 }

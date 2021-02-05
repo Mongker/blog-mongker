@@ -46,3 +46,15 @@
     width: 100%;
     border-radius: 10px;
 }
+.controller_title {
+    display: flex;
+    flex-direction: row;
+}
+.img {
+    width: 40%;
+    height: 200px;
+    cursor: pointer;
+}
+.title_news {
+    width: 60%;
+}

@@ -9,15 +9,40 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Upload, message, Button } from 'antd';
 
-function FileUpload() {
+import uploadFirebase from '../../../util/uploadFirebase';
+function file() {
+    const [viewURL, setViewURL] = React.useState('');
+    const apiUpload = {
+        name: 'file',
+        action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+        headers: {
+            authorization: 'authorization-text',
+        },
+        async onChange(info) {
+            if (info.file.status !== 'uploading') {
+                console.log(info.file, info.fileList);
+                const a = await uploadFirebase(info.fileList[0], null, setViewURL)
+            }
+            if (info.file.status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully`);
+            } else if (info.file.status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
+        },
+    };
     return (
-        <div>mmmmm  </div>
+        <div>
+            <Upload {...apiUpload}>
+                <Button type={'primary'}> Tải lên</Button>
+            </Upload>
+        </div>
     );
 }
 
-FileUpload.propTypes = {};
+file.propTypes = {};
 
-FileUpload.defaultProps = {}
+file.defaultProps = {}
 
-export default FileUpload;
+export default file;

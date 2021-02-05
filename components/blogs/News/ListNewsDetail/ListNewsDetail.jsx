@@ -9,24 +9,26 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './styles/index.module.css';
-function News({title, uid, note}) {
-    console.log('title', title);
+import styles from '../styles/news.module.scss';
+function ListNewsDetail({title, note}) {
     return(
-        <div>{title && title} {uid && uid}</div>
+        <div className={styles.news_container}>
+            <div className={styles.news_title}>{title}</div>
+            <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
+        </div>
     );
 }
 
-News.propTypes = {
+ListNewsDetail.propTypes = {
     title: PropTypes.string,
     uid: PropTypes.string,
     note: PropTypes.string,
 };
 
-News.defaultProps = {
+ListNewsDetail.defaultProps = {
     title: '[Error Server]',
     uid: '[Error Server]',
     note: '[Error Server]',
 };
 
-export default News;
+export default ListNewsDetail;
