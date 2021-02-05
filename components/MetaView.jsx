@@ -16,6 +16,7 @@ function MetaView({ title, description, url, image, icon, name }) {
     return (
         <Head>
             <title>{title}</title>
+            <meta name="description" content={description} />
             <meta name='robots' content='index, follow' />
             <link rel='icon' href={icon} />
             <meta name='author' content={name} />
