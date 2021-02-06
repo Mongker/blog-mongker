@@ -15,19 +15,25 @@ function MetaView({ title, description, url, image, icon, name }) {
     console.log('image', image);
     return (
         <Head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <title>{title}</title>
             <meta name="description" content={description} />
             <meta name='robots' content='index, follow' />
             <link rel='icon' href={icon} />
             <meta name='author' content={name} />
+            <meta name="keywords" content={description} />
+            <!-- ROBOTS -->
+            <meta name='googlebot' content={'noarchive'} />
+            <meta name='robots' content={'noarchive'} />
+
             {/* SEO google, facebook */}
             <meta property='og:description' content={description} />
             <meta property='og:url' content={url} />
             <meta property='og:title' content={title} />
             <meta property='og:type' content='article' />
             <meta property='og:image' content={image} />
-            <meta property='og:image:width' content='600' />
-            <meta property='og:image:height' content='315' />
+            <meta property="og:image:width" content="720" />
+            <meta property="og:image:height" content="480" />
         </Head>
     );
 }
