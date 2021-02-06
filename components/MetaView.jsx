@@ -12,7 +12,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 function MetaView({ title, description, url, image, icon, name }) {
-    console.log('description', description);
+    console.log('image', image);
     return (
         <Head>
             <title>{title}</title>
