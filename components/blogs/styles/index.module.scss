@@ -1,10 +1,12 @@
+/* For mobile phones: */
+
 .news_controller {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center
+    align-items: center;
 }
 .post_new_controller {
     background-color: #eef0f1;
@@ -57,4 +59,14 @@
 }
 .title_news {
     width: 60%;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
 }

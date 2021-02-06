@@ -2,31 +2,48 @@
 .controller {
   display: flex;
   flex-direction: row;
-  height: 90px;
+  height: 100px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .img {
   background-color: #282c34;
   width: 35%;
-  height: 90px;
+  height: 100%;
   border-radius: 10px;
 }
 .news {
-  background-color: red;
   width: 65%;
   height: 90px;
+  margin-left: 5px;
 }
 .title {
-  background-color: #141414;
-  height: 40%;
+  height: 50%;
+  font-weight: bolder;
+  font-size: 15px;
 }
-.description {
-  background-color: #141e6e;
-  height: 40%;
-}
+//.description {
+//  background-color: #141e6e;
+//  height: 40%;
+//}
 .author {
-  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: 20%;
+  margin-top: 10px;
+}
+.avatar {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+}
+.name_author {
+  font-size: 15px;
+  font-weight: bolder;
+  //height: 25px;
+  text-align: center;
+  margin-left: 5px;
 }
 
 /* For tablets: */

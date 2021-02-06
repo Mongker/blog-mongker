@@ -13,7 +13,7 @@ import NewsReview from './NewsDetail/NewsReview';
 
 function ListNewsReview({data}) {
     return(
-        <div>
+        <div style={{margin: '60px'}}>
             {Object.values(data).length > 0 && Object.values(data).map((item) => (<NewsReview key={item.uid} item={item} />))}
         </div>
     );

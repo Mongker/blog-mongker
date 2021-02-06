@@ -10,25 +10,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/news.module.scss';
-function ListNewsDetail({title, note}) {
+import HeaderBlog from '../../Header/HeaderBlog';
+
+function NewsDetail({title, note}) {
     return(
-        <div className={styles.news_container}>
-            <div className={styles.news_title}>{title}</div>
-            <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
-        </div>
+        <React.Fragment>
+            <HeaderBlog />
+            <div className={styles.news_container}>
+                <div className={styles.news_title}>{title}</div>
+                <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
+            </div>
+        </React.Fragment>
     );
 }
 
-ListNewsDetail.propTypes = {
+NewsDetail.propTypes = {
     title: PropTypes.string,
     uid: PropTypes.string,
     note: PropTypes.string,
 };
 
-ListNewsDetail.defaultProps = {
+NewsDetail.defaultProps = {
     title: '[Error Server]',
     uid: '[Error Server]',
     note: '[Error Server]',
 };
 
-export default ListNewsDetail;
+export default NewsDetail;

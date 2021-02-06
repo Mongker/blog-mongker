@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { db } from '../../config/firebase';
-import ListNewsDetail from '../../components/blogs/News/ListNewsDetail/ListNewsDetail';
+import NewsDetail from '../../components/blogs/News/NewsDetail/NewsDetail';
 import MetaView from '../../components/MetaView';
 // import PropTypes from 'prop-types';
 
@@ -53,7 +53,7 @@ function news(props) {
     };
     return <React.Fragment>
         <MetaView {...data} />
-        <ListNewsDetail {...props} />
+        <NewsDetail {...props} />
     </React.Fragment>;
 }
 

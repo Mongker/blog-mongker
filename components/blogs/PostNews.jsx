@@ -9,13 +9,21 @@
 
 import React from 'react';
 import { useRouter } from 'next/router';
-import styled from './styles/index.module.scss';
-import TinyMceEditor from '../example/Tinymce/TinyMceEditor';
 import { Button, Input, message, Upload } from 'antd';
+
+// hooks
 import useWindowSize from '../hooks/useWindowSize';
+
+// jsx
+import TinyMceEditor from '../example/Tinymce/TinyMceEditor';
+
+// util
 import convertVietNamese from '../../util/convertVietNamese';
 import addItemCollection from '../../util/addItemCollection';
 import uploadFirebase from '../../util/uploadFirebase';
+
+// styles
+import styled from './styles/index.module.scss';
 // import convertHtmlToTextVN from '../../util/convertHtmlToTextVN';
 const imgDefault = 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/default%2Fpost-news-default.png?alt=media&token=0bf62a9c-508a-4a63-86cc-e3c8bcb96b39';
 const getMaxId = () => {
@@ -78,7 +86,7 @@ function PostNews() {
                 <div className={styled.controller_title}>
                     <div className={styled.img}>
                         <Upload {...apiUpload}>
-                            <img src={viewURL} alt={'mặc định'} style={{width: '100%'}} />
+                            <img src={viewURL} alt={'mặc định'} style={{width: '100%', height: '200px'}} />
                         </Upload>
                     </div>
                     <div className={styled.title_news}>
