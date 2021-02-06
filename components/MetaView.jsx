@@ -22,7 +22,8 @@ function MetaView({ title, description, url, image, icon, name }) {
             <link rel='icon' href={icon} />
             <meta name='author' content={name} />
             <meta name="keywords" content={description} />
-            <!-- ROBOTS -->
+
+            {/* ROBOTS */}
             <meta name='googlebot' content={'noarchive'} />
             <meta name='robots' content={'noarchive'} />
 
