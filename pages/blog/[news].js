@@ -47,8 +47,8 @@ function news(props) {
         name: 'Blog Mongker',
         icon: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
         title: props.title,
-        url: 'https://mongker.cf/',
-        image: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
+        url: `https://mongker.cf/${props.uid}`,
+        image: props.photo_news,
         description: props.description,
     };
     return <React.Fragment>
