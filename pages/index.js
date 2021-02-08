@@ -42,7 +42,12 @@ function Index() {
                         paddingRight: `${windowSize.widthApp * 0.05}px`,
                     }}
                 >
-                    <img width={windowSize.widthApp * 0.9} heigth={(windowSize.widthApp * 0.9) / 2} src='https://adminbeauty.hvnet.vn/Upload/Files/banner-web-blackfriday.png?width=1170&height=450&v=15042020' alt='https://tiki.vn/chuong-trinh/wipro-unza' />
+                    <img
+                        width={windowSize.widthApp * 0.9}
+                        heigth={(windowSize.widthApp * 0.9) / 2}
+                        src='https://adminbeauty.hvnet.vn/Upload/Files/banner-web-blackfriday.png?width=1170&height=450&v=15042020'
+                        alt='https://tiki.vn/chuong-trinh/wipro-unza'
+                    />
                 </div>
                 <div className={'mobile_menu_category'}>
                     <div className={'mobile_menu_category_item'}>

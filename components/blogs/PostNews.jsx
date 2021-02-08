@@ -62,6 +62,7 @@ function PostNews() {
             }
         },
     };
+    const time = (new Date()).getTime();
     const handleClickAddData = () => {
         const id = titleId();
         const data = {
@@ -72,6 +73,7 @@ function PostNews() {
             photo_news: viewURL,
             list_img_news: listPhotoNews,
             auth: 'root',
+            time: time,
         };
         return addItemCollection('news', id, data, nextPageNews)
     };
