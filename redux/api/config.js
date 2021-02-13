@@ -14,8 +14,8 @@
 
 'use strict';
 
-const url = 'http://localhost:1999/api/'
-// const url = 'https://server-mybook-cynt6514m.vercel.app/api/'
+// const url = 'http://localhost:1999/api/'
+const url = 'https://server-mybook-cynt6514m.vercel.app/api/'
 export const URL_API = {
     // local: 'https://server-mybook.vercel.app/api/',
     local: url,

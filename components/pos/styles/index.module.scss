@@ -1,0 +1,136 @@
+.controller {
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/default%2Fbitcoin-17-2.jpg?alt=media&token=a71a039f-82ff-4514-a1d4-737ab6be9a05');
+    background-color: #086292;
+}
+
+.title_table {
+    text-align: center;
+    color: #cfcdcd;
+    font-weight: bolder;
+    font-size: 25px;
+    width: 30%;
+    background-color: #086292;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+.title {
+    text-align: center;
+    color: #d41c1c;
+    font-weight: bolder;
+    font-size: 25px;
+    width: 100%;
+}
+.controller_modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row_modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.row_title {
+    text-align: center;
+    color: #395fe7;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 40%;
+}
+.row_content {
+    margin-left: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+.table {
+    background-color: #9fc1de;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.tr {
+    border: 1px solid #b8b6b6 !important;
+    text-align: center;
+}
+.th {
+    border: 1px solid #b8b6b6 !important;
+    padding: 2px 4px;
+    cursor: pointer;
+    color: #dd0917;
+    font-size: 18px;
+    background-color: #5da8ec;
+}
+.td {
+    border: 1px solid #b8b6b6 !important;
+    padding: 2px 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.trSum {
+    border: 1px solid #b8b6b6 !important;
+    text-align: center;
+    background: #0a8f11;
+}
+.btn_add {
+    border-radius: 5px;
+    position: fixed;
+    z-index: 500;
+    top: 90%;
+    left: 90%;
+    background-color: #0a8f11;
+}
+.btn_add_post {
+    border-radius: 5px;
+    position: fixed;
+    z-index: 500;
+    top: 90%;
+    left: 10%;
+    background-color: #0a8f11;
+}
+.bnt_reset {
+    border-radius: 5px;
+    position: fixed;
+    z-index: 500;
+    top: 90%;
+    left: 45%;
+    right: 45%;
+    background-color: #0a8f11;
+}
+.btn_search {
+    border-radius: 5px;
+    position: fixed;
+    z-index: 500;
+    top: 5px;
+    left: 90%;
+    background-color: #0a8f11;
+}
+.btn_print {
+    border-radius: 5px;
+    position: fixed;
+    z-index: 500;
+    top: 5px;
+    left: 5%;
+    background-color: #0a8f11;
+}
+.drawer_bank {
+    background-color: red;
+}
+.btn_search_action {
+    margin-top: 90%;
+    border-radius: 5px;
+    background-color: #0a8f11;
+}
+.btn_date_now {
+    width: 90px;
+    text-align: center;
+    margin-left: 5px;
+}

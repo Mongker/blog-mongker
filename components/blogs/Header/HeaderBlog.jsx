@@ -10,14 +10,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import {Drawer} from 'antd';
-import { LeftOutlined, MenuOutlined, SearchOutlined } from '@ant-design/icons';
+import { LeftOutlined, MenuOutlined } from '@ant-design/icons';
 
 // styles
 import styles from './styles/index.module.scss';
 // import PropTypes from 'prop-types';
-
-// const
-const icon = 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Funnamed.jpg?alt=media&token=c3fdea63-c3c0-4370-9cc9-4e59a0dc14b9';
 
 function HeaderBlog() {
     const router = useRouter();
@@ -28,31 +25,32 @@ function HeaderBlog() {
     const onClose = () => {
         setVisible(false);
     };
-    const handleBackPage = () => router.back();
-    const menu = <div className={styles.menu}>Menu</div>;
-        return (
+    return (
         <React.Fragment>
             <div className={styles.page_header}>
-                <div className={styles.page_header_title} onClick={() => router.push('/blog')}>
-                    <img className={styles.page_header_title_avatar} src={icon} alt='avatar' />
-                    <div className={styles.page_header_title_title}>Sinh Viên Review</div>
+                <div className={styles.back_page} onClick={() => router.back()}>
+                    <LeftOutlined style={{ color: '#fff' }} />
                 </div>
-                <div className={styles.back_page} onClick={() => {}}>
-                    <SearchOutlined style={{ color: '#fff' }} />
+                <div className={styles.page_header_title}>
+                    <img className={styles.page_header_title_avatar} src='https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg' alt='avatar' />
+                    <div className={styles.page_header_title_title}>Blog Mongker</div>
                 </div>
                 <div className={styles.page_header_menu} onClick={showOrCloseDrawer}>
                     <MenuOutlined style={{ color: '#fff' }} />
+                    {/*<Button onClick={nextPagePostNews} type={'primary'} style={{ position: 'absolute', borderRadius: 25, left: '90%', top: '15px' }}>*/}
+                    {/*    Đăng bài*/}
+                    {/*</Button>*/}
                 </div>
             </div>
             <Drawer
                 className={styles.drawer}
-                title={menu}
+                title='Đang phát triển '
                 placement="right"
                 closable={false}
                 onClose={onClose}
                 visible={visible}
             >
-                <div>Login</div>
+                <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
             </Drawer>

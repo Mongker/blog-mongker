@@ -10,15 +10,11 @@
 import React from 'react';
 import Blogs from '../../components/blogs';
 import MetaView from '../../components/MetaView';
-import HeaderBlog from '../../components/blogs/Header/HeaderBlog';
-
-// const
-const icon = 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Funnamed.jpg?alt=media&token=c3fdea63-c3c0-4370-9cc9-4e59a0dc14b9';
 
 function Index() {
     const data = {
         name: 'Blog Mongker',
-        icon: icon,
+        icon: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
         title: 'Blog Mongker nới chia sẽ kiến thức lập trình',
         url: 'https://mongker.cf/',
         image: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
@@ -27,7 +23,6 @@ function Index() {
     return (
         <React.Fragment>
             <MetaView {...data} />
-            <HeaderBlog />
             <Blogs />
         </React.Fragment>
     );

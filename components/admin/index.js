@@ -42,16 +42,16 @@ function Admin() {
         setCollapsed(collapsed);
     };
 
-    React.useEffect(() => {
-        if (!localStorage.getItem('id_admin')) {
-            console.log('xx');
-            router.push('/login_admin');
-        }
-        if (checkKey === objectKey.LOGOUT) {
-            localStorage.removeItem('id_admin');
-            router.push('/login_admin');
-        }
-    });
+    // React.useEffect(() => {
+    //     if (!localStorage.getItem('id_admin')) {
+    //         console.log('xx');
+    //         router.push('/login_admin');
+    //     }
+    //     if (checkKey === objectKey.LOGOUT) {
+    //         localStorage.removeItem('id_admin');
+    //         router.push('/login_admin');
+    //     }
+    // });
 
     return (
         <Layout style={{ minHeight: '100vh' }}>

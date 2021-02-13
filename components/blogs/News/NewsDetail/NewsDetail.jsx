@@ -10,13 +10,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/news.module.scss';
+import HeaderBlog from '../../Header/HeaderBlog';
 
 function NewsDetail({title, note}) {
     return(
-        <div className={styles.news_container}>
-            <div className={styles.news_title}>{title}</div>
-            <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
-        </div>
+        <React.Fragment>
+            <HeaderBlog />
+            <div className={styles.news_container}>
+                <div className={styles.news_title}>{title}</div>
+                <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
+            </div>
+        </React.Fragment>
     );
 }
 

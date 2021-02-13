@@ -6,12 +6,9 @@
  * @student_code: 68DCHT20091
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
-
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 // Util
-import { db } from '../../config/firebase';
 import { useRouter } from 'next/router';
 import useWindowSize from '../hooks/useWindowSize';
 
@@ -25,12 +22,11 @@ import HeaderBlog from './Header/HeaderBlog';
 
 function Blogs() {
     const { width } = useWindowSize();
-    const router = useRouter();
 
     const [data, setData] = React.useState({});
 
     React.useEffect(() => {
-        getNews(setData)
+        getNews('news', setData)
         return () => {
             getNews(setData({}));
         };
