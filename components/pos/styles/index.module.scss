@@ -86,6 +86,7 @@
     z-index: 500;
     top: 90%;
     left: 90%;
+    border: #0a8f11;
     background-color: #0a8f11;
 }
 .btn_add_post {
@@ -95,16 +96,26 @@
     top: 90%;
     left: 10%;
     background-color: #0a8f11;
+    border: #0a8f11;
 }
 .bnt_reset {
-    border-radius: 5px;
     position: fixed;
     z-index: 500;
     top: 90%;
     left: 45%;
     right: 45%;
-    background-color: #0a8f11;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
+.btn_get_list {
+    background-color: #0a8f11;
+    border-radius: 5px;
+    color: white;
+    margin-right: 5px;
+    border: #0a8f11;
+}
+
 .btn_search {
     border-radius: 5px;
     position: fixed;
@@ -112,6 +123,7 @@
     top: 5px;
     left: 90%;
     background-color: #0a8f11;
+    border: #0a8f11;
 }
 .btn_print {
     border-radius: 5px;
@@ -120,6 +132,8 @@
     top: 5px;
     left: 5%;
     background-color: #0a8f11;
+    color: white;
+    border: #0a8f11;
 }
 .drawer_bank {
     background-color: red;

@@ -205,3 +205,13 @@
 .img_edit_news {
     width: 100%;
 }
+.modal_post_bank .ant-modal-content {
+    border-radius: 20px;
+}
+.modal_post_bank .ant-modal-header {
+    border-radius: 20px;
+    border-bottom: unset;
+}
+.modal_post_bank {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/default%2Fbitcoin-17-2.jpg?alt=media&token=a71a039f-82ff-4514-a1d4-737ab6be9a05) !important;
+}

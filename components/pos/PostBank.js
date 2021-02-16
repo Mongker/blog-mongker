@@ -8,7 +8,7 @@
  */
 
 import React, { useState } from 'react';
-import { SearchOutlined, ContainerOutlined, PrinterOutlined } from '@ant-design/icons';
+import { SearchOutlined, ContainerOutlined, PrinterOutlined, UserOutlined, UnlockOutlined } from '@ant-design/icons';
 import { Modal, Button, Select, Input, InputNumber, Drawer, message, Popconfirm, Tooltip } from 'antd';
 // import PropTypes from 'prop-types';
 // styles
@@ -17,7 +17,7 @@ import styles from './styles/index.module.scss';
 // Util
 import addItemCollection from 'util/addItemCollection';
 import generateUUID from 'util/generateUUID';
-import getNews from 'util/getNews';
+import dataQuery from 'util/dateNow';
 import updateItemCollection from 'util/updateItemCollection';
 import getQueryData from '../../util/getQueryData';
 import useWindowSize from '../hooks/useWindowSize';
@@ -25,7 +25,8 @@ import ExportCSV from '../../util/ExportCSV';
 // const
 const { Option } = Select;
 const typeState = {
-    post: 'post',
+    user: 'user',
+    pass: 'pass',
     name: 'name',
     day: 'day',
     month: 'month',
@@ -39,7 +40,7 @@ const typeState = {
 };
 function PostBank() {
     const { width, height } = useWindowSize();
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalPostVisible, setIsModalPostVisible] = useState(false);
     const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -62,7 +63,11 @@ function PostBank() {
         moneyUser: 0,
         myMoney: 0,
     });
-
+    const [pass, setPass] = React.useState('');
+    const [user, setUser] = React.useState('');
+    const handleLogin = () => {
+        (user==='admin' && pass==='lethuy92') ? setIsLogin(false) : message.warn('Mật khẩu hoặc tài khoản không đúng');
+    }
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -161,6 +166,12 @@ function PostBank() {
             case typeState.year:
                 setYear(value);
                 break;
+            case typeState.user:
+                setUser(value);
+                break;
+            case typeState.pass:
+                setPass(value);
+                break;
             default:
                 setPost(value);
                 break;
@@ -190,7 +201,10 @@ function PostBank() {
         return getQueryData('post-bank', setData, data);
     };
     const handleResetTable = () => {
-        return getQueryData('post-bank', setData);
+        return getQueryData('post-bank', setData, dataQuery);
+    };
+    const handleResetTableAll = () => {
+        return getQueryData('post-bank', setData, []);
     };
     const handleDateNow = () => {
         const date = new Date().toLocaleDateString('en-US').split('/');
@@ -250,9 +264,10 @@ function PostBank() {
     const titleModal = <div className={styles.title}>Thêm đơn hàng mới</div>;
     const titlePostModal = <div className={styles.title}>Thêm máy mới</div>;
     const titleSearch = <div className={styles.title}>Tìm kiếm siêu dữ liệu</div>;
+    const titleLogin = <div className={styles.title}>Đăng nhập</div>;
 
     React.useEffect(() => {
-        getQueryData('post-bank', setData);
+        getQueryData('post-bank', setData, dataQuery);
         getQueryData('poster', setListPoster, []);
         return () => {
             getQueryData('post-bank');
@@ -286,6 +301,13 @@ function PostBank() {
     };
     return (
         <div className={styles.controller} style={{ width: width, height: height }}>
+            <Modal title={titleLogin} visible={isLogin} footer={null} closable={false} width={width*0.4} wrapClassName={'modal_post_bank'}>
+                <div className={styles.controller_modal}>
+                    <Input onChange={(e) => handleChange(e.target.value, typeState.user)} className={styles.row_modal} size="large" placeholder={'Tài khoản'} prefix={<UserOutlined />} />
+                    <Input.Password onChange={(e) => handleChange(e.target.value, typeState.pass)} className={styles.row_modal} size="large" width={'70%'} placeholder={'Mật khẩu'} prefix={<UnlockOutlined />} />
+                    <Button className={styles.btn_get_list} onClick={handleLogin}>Đăng nhập</Button>
+                </div>
+            </Modal>
             <div className={styles.title_table}>Bảng thống kê hóa đơn</div>
             <Button className={styles.btn_search} type={'primary'} icon={<SearchOutlined />} onClick={showDrawer}>
                 Tìm kiếm
@@ -320,14 +342,23 @@ function PostBank() {
                             </td>
                             <td className={styles.td}>{item.percentBank}</td>
                             <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {((item.money * item.percentBank) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                                {Math.round((item.money * item.percentBank) / 100)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                                vnđ
                             </td>
                             <td className={styles.td}>{item.percentUser}</td>
                             <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {((item.money * item.percentUser) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                                {Math.round((item.money * item.percentUser) / 100)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                                vnđ
                             </td>
                             <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {((item.money * item.percentUser - item.money * item.percentBank) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                                {Math.round((item.money * item.percentUser - item.money * item.percentBank) / 100)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                                vnđ
                             </td>
                             <td className={styles.td}>
                                 <Tooltip placement='left' title={`Ghi chú: ${item.note}`}>
@@ -370,9 +401,15 @@ function PostBank() {
             <Button className={styles.btn_add} type={'primary'} onClick={showModal}>
                 Thêm
             </Button>
-            <Button className={styles.bnt_reset} type={'primary'} onClick={handleResetTable}>
-                Date Now
-            </Button>
+            <div className={styles.bnt_reset} type={'primary'}>
+                <Button type={'primary'} className={styles.btn_get_list} onClick={handleResetTable}>
+                    Get Now
+                </Button>
+                <Button type={'primary'} className={styles.btn_get_list} onClick={handleResetTableAll}>
+                    Get All
+                </Button>
+            </div>
+
             <Button className={styles.btn_add_post} type={'primary'} onClick={() => setIsModalPostVisible(true)}>
                 Thêm máy
             </Button>
@@ -445,7 +482,7 @@ function PostBank() {
                     <Input onChange={(e) => handleChange(e.target.value, typeState.optionPost)} />
                 </div>
             </Modal>
-            <Modal title={titleModal} visible={isModalVisible} width={'70%'} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title={titleModal} visible={isModalVisible} width={'70%'} onOk={handleOk} onCancel={handleCancel} >
                 <div className={styles.controller_modal}>
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Post làm (*): </div>

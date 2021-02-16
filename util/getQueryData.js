@@ -8,26 +8,27 @@
  */
 import { db } from '../config/firebase';
 import { message } from 'antd';
-const date = (new Date()).toLocaleDateString("en-US").split('/');
-const dateQuery = [['month', date[0]],['day', date[1]], ['year', date[2]]]
-const getQueryData = async (ref= 'news', setData = () => {}, dataQuery = dateQuery) => {
-    let refDB = db.collection(ref).where('status', '==', true)
+
+const getQueryData = async (ref = 'news', setData = () => {}, dataQuery = []) => {
+    let refDB = db.collection(ref);
+    dataQuery.push(['status', true]);
     dataQuery.map((item) => {
-        refDB = refDB.where(item[0], "==", item[1]);
-    })
+        refDB = refDB.where(item[0], '==', item[1]);
+    });
+    refDB.orderBy('status', 'desc');
     await refDB.onSnapshot((querySnapshot) => {
-            let object = {};
-            if (querySnapshot.size) {
-                // we have something
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    object[doc.id] = doc.data();
-                });
-            } else {
-                // it's empty
-                message.loading('Loading..', 1)
-            }
-            setData(object);
-        });
-}
+        let object = {};
+        if (querySnapshot.size) {
+            // we have something
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                object[doc.id] = doc.data();
+            });
+        } else {
+            // it's empty
+            message.loading('Loading..', 1);
+        }
+        setData(object);
+    });
+};
 export default getQueryData;
