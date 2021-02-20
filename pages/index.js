@@ -5,11 +5,12 @@ import absoluteUrl from 'next-absolute-url';
 // JSX
 import VanKelly from '../components/VanKelly';
 
-function Index() {
-    const { origin } = absoluteUrl();
-    let component = <div>NUL</div>;
-    switch (origin) {
-        case 'https://vankelly.cf':
+function Index({origin}) {
+    const hostname = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+    console.log('hostname', hostname);
+    let component = <div>Mong 2</div>;
+    switch (hostname) {
+        case 'vankelly.cf':
             component = <VanKelly />;
             break;
         case 'http://localhost:2000':
