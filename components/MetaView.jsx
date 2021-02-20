@@ -12,7 +12,6 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 function MetaView({ title, description, url, image, icon, name }) {
-    console.log('image', image);
     return (
         <Head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

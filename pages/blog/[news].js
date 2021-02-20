@@ -35,6 +35,7 @@ const getNews = async (url) => {
 export async function getStaticPaths() {
     return { paths: [], fallback: true };
 }
+
 export async function getStaticProps(params) {
     const res = await getNews(params['params'].news);
     return {
