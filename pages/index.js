@@ -3,23 +3,30 @@ import React from 'react';
 
 // JSX
 import VanKelly from '../components/VanKelly';
+import MetaView from '../components/MetaView';
 
 function Index() {
     const hostname = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
-    console.log('hostname', hostname);
-    let component = <div>NUL</div>;
+    console.log('hostname: ', hostname);
+    let component;
+    let propsMeta;
     switch (hostname) {
         case 'vankelly.cf':
             component = <VanKelly />;
             break;
-        case 'http://localhost:2000':
-            component = <div>Mong 1</div>;
+        case 'localhost':
+            component = <VanKelly />;
             break;
         default:
             component = <div>Mong 2</div>;
             break;
     }
-    return component;
+    return (
+        <React.Fragment>
+            <MetaView />
+            {component}
+        </React.Fragment>
+    );
 }
 
 Index.propTypes = {};
