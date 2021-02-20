@@ -23,6 +23,7 @@ function Index() {
     }
     return (
         <React.Fragment>
+            <MetaView />
             {component}
         </React.Fragment>
     );

@@ -34,7 +34,6 @@ function VanKelly() {
     }, []);
     return (
         <div className={'controller_page'}>
-            <MetaView />
             <div className={'mobile_header'}>
                 <div className={'mobile_controller_header'}>
                     <div className={'mobile_item_header'}>
