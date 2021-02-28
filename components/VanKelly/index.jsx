@@ -34,7 +34,7 @@ function VanKelly() {
     }, []);
     return (
         <React.Fragment>
-            <MetaView />
+            <MetaView img={'https://adminbeauty.hvnet.vn/Upload/Files/banner-web-blackfriday.png?width=1170&height=450&v=15042020'} />
             <div className={'controller_page'}>
                 <div className={'mobile_header'}>
                     <div className={'mobile_controller_header'}>
