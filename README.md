@@ -5,7 +5,7 @@
 * Trang chủ
 * Chi tiết Bảng tin
 * Đăng nhập với Facebook và Google
-* Đặt mua sản phẩm 
+* Đặt mua sản phẩm
 
 NEXT_PUBLIC_FIREBASE_API_KEY="AIzaSyBPYfQSbzUdHL_iTQ2FdZEi_iAbKAV0a_Q"
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="blog-mongker.firebaseapp.com"

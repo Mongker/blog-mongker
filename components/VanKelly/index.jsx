@@ -107,8 +107,4 @@ function VanKelly() {
     );
 }
 
-VanKelly.propTypes = {};
-
-VanKelly.defaultProps = {};
-
 export default VanKelly;
