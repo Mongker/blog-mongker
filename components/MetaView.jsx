@@ -48,7 +48,7 @@ MetaView.propTypes = {
 MetaView.defaultProps = {
     name: 'Quỳnh Vân',
     icon: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Ffavicon.ico?alt=media&token=4fe2f924-62b4-44ee-8c18-5097a29adb2d',
-    title: 'Mỹ phẩm Quỳnh Vân',
+    title: 'Mỹ phẩm Quỳnh Vân - Sản phẩm của mọi người',
     url: 'https://mongker.cf/',
     image: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2F131338842_2800734746872256_7450134103626634553_n.jpg?alt=media&token=f7826ec4-d40b-4a57-bbf9-63fa98465e46',
     description: 'Mua mỹ phẩm chính hãng - Mỹ phẩm nhập trực tiếp từ Hàn Quốc, Mỹ, Pháp... Giá Tốt. Miễn phí giao hàng tận nơi với đơn hàng trên 700K. Miễn phí hoàn trả trong 7 ngày. Tích luỹ điểm thưởng khi mua hàng tại trên website...',
