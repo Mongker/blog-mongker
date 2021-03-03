@@ -33,7 +33,7 @@ const firebaseConfigCMSPostBank = {
 };
 console.log('NEXT_PUBLIC_FIREBASE_API_KEY', process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
 if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfigCMSPostBank);
+    firebase.initializeApp(firebaseConfig);
 }
 const app = firebase.app();
 const auth = firebase.auth();
