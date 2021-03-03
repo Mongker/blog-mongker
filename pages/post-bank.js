@@ -8,12 +8,12 @@
  */
 
 import React from 'react';
-import PostBank from '../components/pos/PostBank';
+import PostBankV0 from '../components/pos/PostBank.V0.jsx';
 // import PropTypes from 'prop-types';
 
 function post() {
     return(
-        <PostBank />
+        <PostBankV0 />
     );
 }
 

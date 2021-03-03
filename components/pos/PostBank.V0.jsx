@@ -38,7 +38,7 @@ const typeState = {
     note: 'note',
     optionPost: 'optionPost',
 };
-function PostBank() {
+function PostBankV0() {
     const { width, height } = useWindowSize();
     const [isLogin, setIsLogin] = useState(true);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -545,8 +545,8 @@ function PostBank() {
     );
 }
 
-PostBank.propTypes = {};
+PostBankV0.propTypes = {};
 
-PostBank.defaultProps = {};
+PostBankV0.defaultProps = {};
 
-export default PostBank;
+export default PostBankV0;
