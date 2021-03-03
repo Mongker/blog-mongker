@@ -19,7 +19,7 @@ function PostRoot() {
         title: 'Đáo thẻ tín dụng Thanh Hóa - 0888.589.678 - Anh Đức Pro | Nhanh chóng - An Toàn - Uy Tín - Tiền về tay bạn',
         url: 'https://anhduc.cf/',
         image: 'https://www.upsieutoc.com/images/2021/03/04/anh-nen.jpg',
-        description: 'Dịch vụ đáo thẻ tín dụng Anh Đức (0888.589.678) đã hoạt động \n được 5 năm và có được sự tin tưởng của hơn 200k người dùng toàn Thanh Hóa, \n với sự phục vụ hết mình chúng tôi đem đến cho bạn những giá trị mà bạn cần. \n Hãy cầm điện thoại và gọi ngay 0888.589.678 để nhận những gì bạn cần nào !',
+        description: 'Dịch vụ đáo thẻ tín dụng Anh Đức (0888.589.678) đã hoạt động được 5 năm và có được sự tin tưởng của hơn 200k người dùng toàn Thanh Hóa, với sự phục vụ hết mình chúng tôi đem đến cho bạn những giá trị mà bạn cần. Hãy cầm điện thoại và gọi ngay 0888.589.678 để nhận những gì bạn cần nào !',
     }
     return(
         <React.Fragment>
