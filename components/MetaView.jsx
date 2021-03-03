@@ -30,6 +30,7 @@ function MetaView({ title, description, url, image, icon, name }) {
             <meta property='og:image' content={image} />
             <meta property="og:image:width" content="720" />
             <meta property="og:image:height" content="480" />
+            <meta property="og:image:alt" content={title} />
         </Head>
     );
 }
