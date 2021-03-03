@@ -1,8 +1,8 @@
 import React from 'react';
-import PostBankV0 from '../components/pos/PostBank.V0.jsx';
+import PostRoot from '../components/pos/PostRoot';
 
 function Index() {
-    return <PostBankV0 />
+    return <PostRoot />
 }
 
 Index.propTypes = {};
