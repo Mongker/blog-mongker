@@ -40,7 +40,7 @@ const typeState = {
 };
 function PostBankV0() {
     const { width, height } = useWindowSize();
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalPostVisible, setIsModalPostVisible] = useState(false);
     const [isDrawerVisible, setIsDrawerVisible] = useState(false);
