@@ -34,7 +34,6 @@ const ExportCSV = (props) => {
     ];
     // const header = Object.keys(Heading[0]);
     const header = Object.values(Heading[0]);
-    console.log('header', header);
     const exportToCSV = (csvData, fileName, wscols) => {
         const ws = XLSX.utils.json_to_sheet(Heading, {
             header: header,

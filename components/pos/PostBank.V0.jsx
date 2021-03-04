@@ -40,7 +40,7 @@ const typeState = {
 };
 function PostBankV0() {
     const { width, height } = useWindowSize();
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalPostVisible, setIsModalPostVisible] = useState(false);
     const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -518,19 +518,19 @@ function PostBankV0() {
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Số tiền (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber value={money} onChange={(value) => handleChange(value, typeState.money)} style={{ width: 200 }} />
+                            <InputNumber onChange={(value) => handleChange(value, typeState.money)} style={{ width: 200 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Phí % ngân hàng (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber value={percentBank} onChange={(value) => handleChange(value, typeState.percentBank)} style={{ width: 100 }} />
+                            <InputNumber onChange={(value) => handleChange(value, typeState.percentBank)} style={{ width: 100 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Phí % thu khách hàng (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber value={percentUser} onChange={(value) => handleChange(value, typeState.percentUser)} style={{ width: 100 }} />
+                            <InputNumber min={percentBank} onChange={(value) => handleChange(value, typeState.percentUser)} style={{ width: 100 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
