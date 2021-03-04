@@ -104,9 +104,13 @@ function PostBankV0() {
             status: true,
         };
         if (post !== 'Chọn máy làm' && name.length > 0 && year > 0 && month > 0 && day > 0 && numberCard > 0 && money > 0 && percentUser > 0 && percentBank > 0) {
-            addItemCollection('post-bank', id, data);
-            setIsModalVisible(false);
-            resetState();
+            if(percentUser > percentBank) {
+                addItemCollection('post-bank', id, data);
+                setIsModalVisible(false);
+                resetState();
+            } else {
+                message.warn('Phí thu khách phải lớn hơn hoặc bằng phí ngân hàng => Nhập lại');
+            }
         } else {
             message.warn('Không được để trống thông tin !');
         }
@@ -143,7 +147,7 @@ function PostBankV0() {
                 setNumberCard(value);
                 break;
             case typeState.money:
-                setMoney(Math.ceil(value * 1000000));
+                setMoney(Math.round(value * 1000000));
                 break;
             case typeState.percentBank:
                 setPercentBank(value);
@@ -330,50 +334,50 @@ function PostBankV0() {
                     <th className={styles.th}>Event</th>
                 </tr>
                 {Object.values(data).length > 0 &&
-                    Object.values(data).map((item, index) => (
-                        <tr className={styles.tr}>
-                            <td className={styles.td}>{index + 1}</td>
-                            <td className={styles.td}>{item.post}</td>
-                            <td className={styles.td}>{`${item.day}-${item.month}-${item.year}`}</td>
-                            <td className={styles.td}>{item.name}</td>
-                            <td className={styles.td}>{item.numberCard}</td>
-                            <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {item.money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
-                            </td>
-                            <td className={styles.td}>{item.percentBank}</td>
-                            <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {Math.round((item.money * item.percentBank) / 100)
-                                    .toString()
-                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
-                                vnđ
-                            </td>
-                            <td className={styles.td}>{item.percentUser}</td>
-                            <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {Math.round((item.money * item.percentUser) / 100)
-                                    .toString()
-                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
-                                vnđ
-                            </td>
-                            <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                                {Math.round((item.money * item.percentUser - item.money * item.percentBank) / 100)
-                                    .toString()
-                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
-                                vnđ
-                            </td>
-                            <td className={styles.td}>
-                                <Tooltip placement='left' title={`Ghi chú: ${item.note}`}>
-                                    <ContainerOutlined />
-                                </Tooltip>
-                            </td>
-                            <td className={styles.td}>
-                                <Popconfirm placement={'left'} title={'Bạn có chắc muốn xóa'} onConfirm={() => handleDelete(item.uid, 'post-bank')} okText='Yes' cancelText='No'>
-                                    <Button type={'primary'} danger style={{ borderRadius: '5px' }}>
-                                        Xóa
-                                    </Button>
-                                </Popconfirm>
-                            </td>
-                        </tr>
-                    ))}
+                Object.values(data).map((item, index) => (
+                    <tr className={styles.tr}>
+                        <td className={styles.td}>{index + 1}</td>
+                        <td className={styles.td}>{item.post}</td>
+                        <td className={styles.td}>{`${item.day}-${item.month}-${item.year}`}</td>
+                        <td className={styles.td}>{item.name}</td>
+                        <td className={styles.td}>{item.numberCard}</td>
+                        <td className={styles.td} style={{ fontWeight: 'bold' }}>
+                            {item.money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                        </td>
+                        <td className={styles.td}>{item.percentBank}</td>
+                        <td className={styles.td} style={{ fontWeight: 'bold' }}>
+                            {Math.round((item.money * item.percentBank) / 100)
+                                .toString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                            vnđ
+                        </td>
+                        <td className={styles.td}>{item.percentUser}</td>
+                        <td className={styles.td} style={{ fontWeight: 'bold' }}>
+                            {Math.round((item.money * item.percentUser) / 100)
+                                .toString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                            vnđ
+                        </td>
+                        <td className={styles.td} style={{ fontWeight: 'bold' }}>
+                            {Math.round((item.money * item.percentUser - item.money * item.percentBank) / 100)
+                                .toString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+                            vnđ
+                        </td>
+                        <td className={styles.td}>
+                            <Tooltip placement='left' title={`Ghi chú: ${item.note}`}>
+                                <ContainerOutlined />
+                            </Tooltip>
+                        </td>
+                        <td className={styles.td}>
+                            <Popconfirm placement={'left'} title={'Bạn có chắc muốn xóa'} onConfirm={() => handleDelete(item.uid, 'post-bank')} okText='Yes' cancelText='No'>
+                                <Button type={'primary'} danger style={{ borderRadius: '5px' }}>
+                                    Xóa
+                                </Button>
+                            </Popconfirm>
+                        </td>
+                    </tr>
+                ))}
                 <tr className={styles.trSum}>
                     <td />
                     <td />
@@ -381,18 +385,18 @@ function PostBankV0() {
                     <td />
                     <td />
                     <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                        {sum.money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                        {Math.round(sum.money).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
                     </td>
                     <td />
                     <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                        {sum.moneyBank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                        {Math.round(sum.moneyBank).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
                     </td>
                     <td />
                     <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                        {sum.moneyUser.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                        {Math.round(sum.moneyUser).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
                     </td>
                     <td className={styles.td} style={{ fontWeight: 'bold' }}>
-                        {sum.myMoney.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
+                        {Math.round(sum.myMoney).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} vnđ
                     </td>
                     <td />
                     <td />
@@ -468,16 +472,16 @@ function PostBankV0() {
             <Modal title={titlePostModal} visible={isModalPostVisible} onOk={handleAddPost} onCancel={handleOffModal}>
                 <div className={styles.controller_modal}>
                     {listPoster &&
-                        Object.values(listPoster).map((item) => (
-                            <div className={styles.row_content} style={{ marginBottom: '5px' }}>
-                                <div className={styles.row_title} style={{ width: '100%' }}>
-                                    {item.name}
-                                </div>
-                                <Button type={'primary'} danger onClick={() => handleDelete(item.uid, 'poster')}>
-                                    Xóa
-                                </Button>
+                    Object.values(listPoster).map((item) => (
+                        <div className={styles.row_content} style={{ marginBottom: '5px' }}>
+                            <div className={styles.row_title} style={{ width: '100%' }}>
+                                {item.name}
                             </div>
-                        ))}
+                            <Button type={'primary'} danger onClick={() => handleDelete(item.uid, 'poster')}>
+                                Xóa
+                            </Button>
+                        </div>
+                    ))}
 
                     <Input onChange={(e) => handleChange(e.target.value, typeState.optionPost)} />
                 </div>
@@ -518,19 +522,19 @@ function PostBankV0() {
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Số tiền (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber onChange={(value) => handleChange(value, typeState.money)} style={{ width: 200 }} />
+                            <InputNumber value={money} onChange={(value) => handleChange(value, typeState.money)} style={{ width: 200 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Phí % ngân hàng (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber onChange={(value) => handleChange(value, typeState.percentBank)} style={{ width: 100 }} />
+                            <InputNumber value={percentBank} onChange={(value) => handleChange(value, typeState.percentBank)} style={{ width: 100 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
                         <div className={styles.row_title}>Phí % thu khách hàng (*): </div>
                         <div className={styles.row_content}>
-                            <InputNumber min={percentBank} onChange={(value) => handleChange(value, typeState.percentUser)} style={{ width: 100 }} />
+                            <InputNumber value={percentUser} onChange={(value) => handleChange(value, typeState.percentUser)} style={{ width: 100 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
