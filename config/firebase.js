@@ -22,6 +22,15 @@ const firebaseConfig = {
     appId: "1:665080669217:web:034630c21cae6f19492f60",
     measurementId: "G-3Q7KG4NN62"
 };
+const firebaseConfigCMSPostBank = {
+    apiKey: "AIzaSyBDTwbEYfPbjh6Luo96tAV0L18ZmAaGVbo",
+    authDomain: "cms-post-bank.firebaseapp.com",
+    projectId: "cms-post-bank",
+    storageBucket: "cms-post-bank.appspot.com",
+    messagingSenderId: "257891716065",
+    appId: "1:257891716065:web:127a00ab3b7685813020a0",
+    measurementId: "G-6ZH72JD9TG"
+};
 console.log('NEXT_PUBLIC_FIREBASE_API_KEY', process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);

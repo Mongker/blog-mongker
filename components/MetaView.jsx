@@ -22,10 +22,6 @@ function MetaView({ title, description, url, image, icon, name }) {
             <meta name='author' content={name} />
             <meta name="keywords" content={description} />
 
-            {/* ROBOTS */}
-            <meta name='googlebot' content={'noarchive'} />
-            <meta name='robots' content={'noarchive'} />
-
             {/* SEO google, facebook */}
             <meta property='og:description' content={description} />
             <meta property='og:url' content={url} />
@@ -34,6 +30,7 @@ function MetaView({ title, description, url, image, icon, name }) {
             <meta property='og:image' content={image} />
             <meta property="og:image:width" content="720" />
             <meta property="og:image:height" content="480" />
+            <meta property="og:image:alt" content={title} />
         </Head>
     );
 }
