@@ -143,7 +143,7 @@ function PostBankV0() {
                 setNumberCard(value);
                 break;
             case typeState.money:
-                setMoney(value * 1000000);
+                setMoney(Math.ceil(value * 1000000));
                 break;
             case typeState.percentBank:
                 setPercentBank(value);
