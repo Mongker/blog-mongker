@@ -46,12 +46,12 @@ MetaView.propTypes = {
 };
 
 MetaView.defaultProps = {
-    name: 'Quỳnh Vân',
-    icon: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2Ffavicon.ico?alt=media&token=4fe2f924-62b4-44ee-8c18-5097a29adb2d',
-    title: 'Mỹ phẩm Quỳnh Vân - Sản phẩm của mọi người',
+    name: 'Blog Mongker',
+    icon: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
+    title: 'Lê Văn Mong - Blogger',
     url: 'https://mongker.cf/',
-    image: 'https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/FaviconWeb%2F131338842_2800734746872256_7450134103626634553_n.jpg?alt=media&token=f7826ec4-d40b-4a57-bbf9-63fa98465e46',
-    description: 'Mua mỹ phẩm chính hãng - Mỹ phẩm nhập trực tiếp từ Hàn Quốc, Mỹ, Pháp... Giá Tốt. Miễn phí giao hàng tận nơi với đơn hàng trên 700K. Miễn phí hoàn trả trong 7 ngày. Tích luỹ điểm thưởng khi mua hàng tại trên website...',
+    image: 'https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg',
+    description: 'Website là nơi chia sẽ kiến thức lập trình theo góc nhìn của mình, mong những kiến thức của mình có thể giúp đỡ các bạn trong công cuộc kiến thiết bản thân của mình.',
 };
 
 export default MetaView;

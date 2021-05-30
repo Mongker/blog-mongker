@@ -12,17 +12,17 @@ import 'firebase/storage';
     // appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     // measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 // };
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBPYfQSbzUdHL_iTQ2FdZEi_iAbKAV0a_Q",
-    authDomain: "blog-mongker.firebaseapp.com",
-    projectId: "blog-mongker",
-    storageBucket: "blog-mongker.appspot.com",
-    messagingSenderId: "665080669217",
-    appId: "1:665080669217:web:034630c21cae6f19492f60",
-    measurementId: "G-3Q7KG4NN62"
+    apiKey: "AIzaSyABofgbz0l21Fd9h5AjEa6blvNe0umkFtM",
+    authDomain: "blogger-mong.firebaseapp.com",
+    projectId: "blogger-mong",
+    storageBucket: "blogger-mong.appspot.com",
+    messagingSenderId: "428235751007",
+    appId: "1:428235751007:web:ebb861d8c29f56bce425ea",
+    measurementId: "G-8PQ7TF9YDW"
 };
-console.log('NEXT_PUBLIC_FIREBASE_API_KEY', process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
+
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }

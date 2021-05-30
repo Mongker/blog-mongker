@@ -1,5 +1,13 @@
 import React from 'react';
-import VanKelly from '../components/VanKelly';
+import Blogs from '../components/blogs/index';
+import MetaView from '../components/MetaView';
 
-const Index = () => <VanKelly />;
+const Index = () => {
+    return (
+        <React.Fragment>
+            <MetaView />
+            <Blogs />
+        </React.Fragment>
+    );
+};
 export default Index;

@@ -215,3 +215,30 @@
 .modal_post_bank {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/blog-mongker.appspot.com/o/default%2Fbitcoin-17-2.jpg?alt=media&token=a71a039f-82ff-4514-a1d4-737ab6be9a05) !important;
 }
+
+
+
+
+/*======================
+    404 page
+=======================*/
+
+
+.page_404{
+    margin-top: 50px;
+    background:#fff;
+    font-family: 'Arvo', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.four_zero_four_bg{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: red;
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+}
+

@@ -10,18 +10,19 @@ import { db } from '../config/firebase';
 import { message } from 'antd';
 
 /**
- * @description: Dùng để get danh sách bài viết theo thời gian thực với firbase
+ * @description: Dùng để get danh sách bài viết theo thời gian thực với firebase
  * @author: MongLV
  * @param: setData
  * @returns null
  */
-const getNews = async (ref= 'news', setData = () => {}) =>
+
+const getNews = async (ref= 'news', setData = () => {}) => {
+    let object = {};
     await db
         .collection(ref)
-        .where("status", "==", true)
+        // .where("status", "==", true)
         .limit(100)
         .onSnapshot((querySnapshot) => {
-            let object = {};
             if (querySnapshot.size) {
                 // we have something
                 querySnapshot.forEach((doc) => {
@@ -33,5 +34,7 @@ const getNews = async (ref= 'news', setData = () => {}) =>
                 message.warn('Loading');
             }
             setData(object);
-        });
+        })
+    return object;
+};
 export default getNews;

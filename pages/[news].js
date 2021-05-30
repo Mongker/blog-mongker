@@ -8,9 +8,9 @@
  */
 
 import React from 'react';
-import { db } from '../../config/firebase';
-import NewsDetail from '../../components/blogs/News/NewsDetail/NewsDetail';
-import MetaView from '../../components/MetaView';
+import { db } from '../config/firebase';
+import NewsDetail from '../components/blogs/News/NewsDetail/NewsDetail';
+import MetaView from '../components/MetaView';
 // import PropTypes from 'prop-types';
 
 const getNews = async (url) => {
@@ -32,15 +32,32 @@ const getNews = async (url) => {
    }
    return obj;
 };
-export async function getStaticPaths() {
-    return { paths: [], fallback: true };
-}
+// export async function getStaticPaths() {
+//     return { paths: [], fallback: true };
+// }
+//
+// export async function getStaticProps(params) {
+//     console.log('xxxx', params); // MongLV log fix bug
+//     const res = await getNews(params['params'].news);
+//     console.log('res', res); // MongLV log fix bug
+//     return {
+//         props: {...res},
+//     };
+// }
 
-export async function getStaticProps(params) {
-    const res = await getNews(params['params'].news);
-    return {
-        props: {...res},
-    };
+/* Note by MongLV: Server side render */
+export async function getServerSideProps(context) {
+    const { params } = context;
+    const res = await getNews(params.news);
+    if (!res) {
+        return {
+            redirect: {
+                destination: '/404',
+                permanent: false,
+            },
+        }
+    }
+    return { props: { ... res} };
 }
 
 function news(props) {
@@ -52,7 +69,6 @@ function news(props) {
         image: props.photo_news,
         description: props.description,
     };
-    console.log('data', data);
     return <React.Fragment>
         <MetaView {...data} />
         <NewsDetail {...props} />

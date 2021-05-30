@@ -12,10 +12,11 @@ import PropTypes from 'prop-types';
 import styles from '../styles/news.module.scss';
 import HeaderBlog from '../../Header/HeaderBlog';
 
-function NewsDetail({title, note}) {
+function NewsDetail({title, note, photo_news}) {
     return(
         <React.Fragment>
             <HeaderBlog />
+            <img className={styles.img} src={photo_news} />
             <div className={styles.news_container}>
                 <div className={styles.news_title}>{title}</div>
                 <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />

@@ -31,7 +31,7 @@ function HeaderBlog() {
                 <div className={styles.back_page} onClick={() => router.back()}>
                     <LeftOutlined style={{ color: '#fff' }} />
                 </div>
-                <div className={styles.page_header_title}>
+                <div className={styles.page_header_title} onClick={() => router.push('/')}>
                     <img className={styles.page_header_title_avatar} src='https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg' alt='avatar' />
                     <div className={styles.page_header_title_title}>Blog Mongker</div>
                 </div>
