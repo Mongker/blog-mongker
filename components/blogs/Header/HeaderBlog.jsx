@@ -33,7 +33,7 @@ function HeaderBlog() {
                 </div>
                 <div className={styles.page_header_title} onClick={() => router.push('/')}>
                     <img className={styles.page_header_title_avatar} src='https://s240-ava-talk.zadn.vn/8/f/3/5/6/240/499c8cfa904f6c89e44aed82aab25b06.jpg' alt='avatar' />
-                    <div className={styles.page_header_title_title}>Blog Mongker</div>
+                    <div className={styles.page_header_title_title}>Mongker Media</div>
                 </div>
                 <div className={styles.page_header_menu} onClick={showOrCloseDrawer}>
                     <MenuOutlined style={{ color: '#fff' }} />

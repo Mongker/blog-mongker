@@ -11,15 +11,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/news.module.scss';
 import HeaderBlog from '../../Header/HeaderBlog';
+import useWindowSize from '../../../hooks/useWindowSize';
 
 function NewsDetail({title, note, photo_news}) {
+    const {width} = useWindowSize()
     return(
         <React.Fragment>
             <HeaderBlog />
-            <img className={styles.img} src={photo_news} />
+            <img className={styles.img} src={photo_news} style={{width: width}}/>
             <div className={styles.news_container}>
                 <div className={styles.news_title}>{title}</div>
-                <div className={styles.news_content} dangerouslySetInnerHTML={{ __html: note }} />
+                <div className={styles.news_content}>
+                    <div dangerouslySetInnerHTML={{ __html: note }} />
+                </div>
             </div>
         </React.Fragment>
     );

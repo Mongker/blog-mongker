@@ -11,9 +11,10 @@ import React from 'react';
 import { db } from '../config/firebase';
 import NewsDetail from '../components/blogs/News/NewsDetail/NewsDetail';
 import MetaView from '../components/MetaView';
+import getNews from '../util/getNews';
 // import PropTypes from 'prop-types';
 
-const getNews = async (url) => {
+const getNewsDetail = async (url) => {
    let obj = {};
    try {
        await db
@@ -21,7 +22,6 @@ const getNews = async (url) => {
            .doc(url)
            .get()
            .then(function (doc) {
-               console.log('Cached document data:', doc.data());
                obj = doc.data();
            })
            .catch(function (error) {
@@ -32,23 +32,25 @@ const getNews = async (url) => {
    }
    return obj;
 };
-// export async function getStaticPaths() {
-//     return { paths: [], fallback: true };
-// }
-//
-// export async function getStaticProps(params) {
-//     console.log('xxxx', params); // MongLV log fix bug
-//     const res = await getNews(params['params'].news);
-//     console.log('res', res); // MongLV log fix bug
-//     return {
-//         props: {...res},
-//     };
-// }
+export async function getStaticPaths() {
+    const snapshot = await db.collection('news').get(); // MongLV log fix bug);
 
-/* Note by MongLV: Server side render */
-export async function getServerSideProps(context) {
-    const { params } = context;
-    const res = await getNews(params.news);
+    let paths = [];
+    if (snapshot.empty) {
+        console.log('No matching documents.');
+        return;
+    }
+    snapshot.forEach(doc => {
+        paths.push({
+            params: { news: doc.id.toString() },
+        });
+    });
+    return { paths: paths, fallback: 'blocking' };
+}
+
+export async function getStaticProps(params) {
+    // console.log('params', params); // MongLV log fix bug
+    const res = await getNewsDetail(params['params'].news);
     if (!res) {
         return {
             redirect: {
@@ -57,8 +59,26 @@ export async function getServerSideProps(context) {
             },
         }
     }
-    return { props: { ... res} };
+    return {
+        props: {...res},
+        revalidate: 5,
+    };
 }
+
+/* Note by MongLV: Server side render */
+// export async function getServerSideProps(context) {
+//     const { params } = context;
+//     const res = await getNews(params.news);
+//     if (!res) {
+//         return {
+//             redirect: {
+//                 destination: '/404',
+//                 permanent: false,
+//             },
+//         }
+//     }
+//     return { props: { ... res} };
+// }
 
 function news(props) {
     const data = {
