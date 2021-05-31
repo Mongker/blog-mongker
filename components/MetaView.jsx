@@ -17,14 +17,13 @@ function MetaView({ title, description, url, image, icon, name }) {
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <title>{title}</title>
             <meta name="description" content={description} />
-            <meta name='robots' content='index, follow' />
+
             <link rel='icon' href={icon} />
             <meta name='author' content={name} />
             <meta name="keywords" content={description} />
 
             {/* ROBOTS */}
-            <meta name='googlebot' content={'noarchive'} />
-            <meta name='robots' content={'noarchive'} />
+            <meta name='robots' content='index, follow' />
 
             {/* SEO google, facebook */}
             <meta property='og:description' content={description} />
