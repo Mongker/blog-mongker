@@ -37,6 +37,7 @@ export default async (req, res) => {
         // console.log(doc.id, '=>', doc.data());
         links.push({ url: `/${doc.id}`, changefreq: "daily", priority: 0.3 });
     });
+    links.push({url: `/`, changefreq: "daily", priority: 0.3})
 
     // Create a stream to write to
     const stream = await new SitemapStream({ hostname: `https://${req.headers.host}` });
