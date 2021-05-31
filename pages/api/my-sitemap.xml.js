@@ -35,9 +35,11 @@ export default async (req, res) => {
 
     snapshot.forEach(doc => {
         // console.log(doc.id, '=>', doc.data());
-        links.push({ url: `/${doc.id}`, changefreq: "daily", priority: 0.3, lastmod: (new Date()).toISOString() });
+        links.push({ url: `/${doc.id}`, lastmod: (new Date()).toISOString() });
+        // links.push({ url: `/${doc.id}`, changefreq: "daily", priority: 0.3, lastmod: (new Date()).toISOString() });
     });
-    links.push({url: `/`, changefreq: "daily", priority: 0.3, lastmod: (new Date()).toISOString()})
+    links.push({url: `/`, lastmod: (new Date()).toISOString()})
+    // links.push({url: `/`, changefreq: "daily", priority: 0.3, lastmod: (new Date()).toISOString()})
 
     // Create a stream to write to
     const stream = await new SitemapStream({ hostname: `https://${req.headers.host}` });
