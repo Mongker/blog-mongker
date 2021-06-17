@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag';
 import 'antd/dist/antd.css';
 import '../styles/index.scss';
-import {AuthProvider} from '../components/example/hooks/useAuth';
+import { AuthProvider } from "../components/example/hooks/useAuth";
+
 function App({ Component, pageProps }) {
     const router = useRouter();
     useEffect(() => {
