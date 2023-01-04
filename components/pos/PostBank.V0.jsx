@@ -435,7 +435,7 @@ function PostBankV0() {
                         <div className={styles.row_content} style={{ width: '70%' }}>
                             <InputNumber placeholder={'Ngày'} min={0} max={31} value={day} onChange={(value) => handleChange(value, typeState.day)} style={{ width: 70 }} />
                             <InputNumber placeholder={'Tháng'} min={0} max={12} value={month} onChange={(value) => handleChange(value, typeState.month)} style={{ width: 70 }} />
-                            <InputNumber placeholder={'Năm'} min={0} max={2022} value={year} onChange={(value) => handleChange(value, typeState.year)} style={{ width: 100 }} />
+                            <InputNumber placeholder={'Năm'} min={0} max={2050} value={year} onChange={(value) => handleChange(value, typeState.year)} style={{ width: 100 }} />
                         </div>
                     </div>
                     <div className={styles.row_modal}>
@@ -501,7 +501,7 @@ function PostBankV0() {
                         <div className={styles.row_content}>
                             <InputNumber placeholder={'Ngày'} min={0} max={31} value={day} onChange={(value) => handleChange(value, typeState.day)} style={{ width: 70 }} />
                             <InputNumber placeholder={'Tháng'} min={0} max={12} value={month} onChange={(value) => handleChange(value, typeState.month)} style={{ width: 70 }} />
-                            <InputNumber placeholder={'Năm'} min={0} max={2022} value={year} onChange={(value) => handleChange(value, typeState.year)} style={{ width: 100 }} />
+                            <InputNumber placeholder={'Năm'} min={0} max={2050} value={year} onChange={(value) => handleChange(value, typeState.year)} style={{ width: 100 }} />
                             <Button className={styles.btn_date_now} type={'primary'} onClick={handleDateNow}>
                                 Date Now
                             </Button>
